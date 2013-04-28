@@ -20,7 +20,7 @@ You can make things run in 15 minutes.
 
 ### Dependencies
 
-* PHP library [Timthumb](http://code.google.com/p/timthumb/) (GPL2 license)
+* PHP library [Timthumb](http://code.google.com/p/timthumb/) (GPL license)
 * Javascript library [Zepto](http://zeptojs.com/) (MIT license)
 
 ### 1. Timthumb
