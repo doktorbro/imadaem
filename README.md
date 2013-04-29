@@ -75,30 +75,91 @@ Learn the available options in the API description.
 
 ### Global Options
 
-Options you can pass to the initialization call
+Options you can pass to the initialization call.
 
 <table>
   <thead>
     <tr>
       <th>Parameter</th>
-      <th>Mearning</th>
-      <th>Example</th>
+      <th>Meaning</th>
+      <th>Values</th>
+      <th>Default</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><var>timthumbPath</var></td>
-      <td>The path to Timthumb script</td>
-      <td><code>"/timthumb/timthumb.php"</code> — default</td>
+      <td>Path to Timthumb script</td>
+      <td><var>string</var></td>
+      <td><code>/timthumb/timthumb.php</code></td>
     </tr>
     <tr>
       <td><var>verticalRhythm</var></td>
-      <td>Resize images according to the typography</td>
-      <td>
-* <code>null</code> — default
-* <code>"line-height"</code>
-      </td>
+      <td>Keep image height according to a vertical scale</td>
+      <td><code>null</code>, <code>line-height</code></td>
+      <td><code>null</code></td>
     </tr>
+    <tr>
+      <td><var>dataUrl</var></td>
+      <td>Data attribute that holds the original image’s URL</td>
+      <td><var>string</var></td>
+      <td><code>url</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### Individual Options
+
+Options you can pass to every image by adding data attributes. Only the `data-url` is required. Without it Imadaem will not affect the image.
+
+<table>
+  <thead>
+    <tr>
+      <th>Data attribute</th>
+      <th>Meaning</th>
+      <th>Values</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><var>url</var></td>
+      <td>Path to the original</td>
+      <td><var>string</var></td>
+      <td><code>data-url='/path/to/image.jpg'</code></td>
+    </tr>
+    
+    <tr>
+      <td><var>gravity</var></td>
+      <td>Position of the most important piece</td>
+      <td><code>l</code>, <code>r</code>,
+        <code>t</code>, <code>tl</code>, <code>tr</code>,
+        <code>b</code>, <code>bl</code>, <code>br</code>
+      </td>
+      <td><code>data-gravity='tr'</code></td>
+    </tr>
+
+    <tr>
+      <td><var>ratio</var></td>
+      <td>Aspect ratio</td>
+      <td><var>number</var></td>
+      <td><code>data-ratio='1.5'</code></td>
+    </tr>
+
+    <tr>
+      <td><var>max-ratio</var></td>
+      <td>Maximum aspect ratio</td>
+      <td><var>number</var></td>
+      <td><code>data-max-ratio='2.4'</code> If ratio is set, max-ratio is ignored.</td>
+    </tr>
+    
+    <tr>
+      <td><var>height-guide</var></td>
+      <td>Element to copy the height from. ID, class or tag.</td>
+      <td><var>string</var></td>
+      <td><code>data-height-guide='#header'</code></td>
+    </tr>
+
   </tbody>
 </table>
 
