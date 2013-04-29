@@ -1,18 +1,25 @@
-Imadaem for Zepto
+Imadaem for Zepto —  JS Daemon for Responsive Images
 =============
 
-_Imadaem_ is a javascript daemon for adaptive images with [Timthumb](http://code.google.com/p/timthumb/) as [Zepto](http://zeptojs.com/) plugin.
+_Imadaem_ is a javascript daemon for responsive images with [Timthumb](http://code.google.com/p/timthumb/) as [Zepto](http://zeptojs.com/) plugin.
 
-## Why?
+Imadaem replaces the placeholder image by the dedicated size image on every significant browser event. The website _feels_ pretty fast. The visitor sees the low quality file nearly immediately and can start to interact with the site: scroll, zoom, etc. After the right resolution file is loaded, all the visitor maybe notices is the blurry image gets sharp.
 
-Read what people think about the technique Imadaem provides:
+The small overhead by loading two images instead of one is negligible. In return you get low latency user experience.
 
-* _[Introducing LQIP – Low Quality Image Placeholders](http://www.guypo.com/feo/introducing-lqip-low-quality-image-placeholders/)_ by Guy Podjarny, Chief Product Architect at Akamai
+Visitors with no javascript still see everything as long as you provide sufficient placeholders.
+
+## Reason
+
+Read what wise men think about the technique Imadaem provides:
+
+* _[Introducing LQIP — Low Quality Image Placeholders](http://www.guypo.com/feo/introducing-lqip-low-quality-image-placeholders/)_ by Guy Podjarny, Chief Product Architect at Akamai
 * _[I ♥ Image Bytes](http://www.stevesouders.com/blog/2013/04/26/i/)_ by Steve Souders, Head Performance Engineer at Google
+* _[Cheating or Good Design?](http://www.usabilitypost.com/2012/05/31/cheating-or-good-design/)_ by Dmitry Fadeyev, Creator of Usaura
 
 ## Example
 
-Visit my [personal website](http://penibelst.de/). Resize your browser’s window it and see what happens.
+Visit my [personal website](http://penibelst.de/). Resize your browser’s window it and see what happens. Look at the network waterfall of your browser to see
 
 ## Setup
 
