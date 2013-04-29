@@ -57,23 +57,23 @@ You must put the 3 files from the previous steps into the include definition.
     });
 </script>
 ````
-Learn the available options in the API description.
+Learn the available javascript options in the API description.
 
 ### 5. Data in Images
 
-Add `data-url` attribute to existing images.
+Add `data-url` attribute with the path to the original image. Change the `src` attribute to a placeholder image, e. g. a low quality version.
 ````html
 <img
     alt='Image'
     src='/path/to/image-placeholder.jpg'
-    data-url='/path/to/image.jpg'
+    data-url='/path/to/image-original.jpg'
 />
 ````
-Learn the available options in the API description.
+Learn the available data options in the API description.
 
 ## API
 
-### Global Options
+### Javascript Options
 
 Options you can pass to the initialization call.
 
@@ -108,14 +108,14 @@ Options you can pass to the initialization call.
   </tbody>
 </table>
 
-### Individual Options
+### Data Options
 
 Options you can pass to every image by adding data attributes. Only the `data-url` is required. Without it Imadaem will not affect the image.
 
 <table>
   <thead>
     <tr>
-      <th>Data attribute</th>
+      <th>Attribute</th>
       <th>Meaning</th>
       <th>Values</th>
       <th>Example</th>
