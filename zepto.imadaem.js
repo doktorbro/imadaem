@@ -1,4 +1,4 @@
-/*! Imadaem v0.1.1 — Daemon for Adaptive Images with Timthumb as Zepto Plugin http://git.io/AOys5A by Anatol Broder under the MIT License */
+/*! Imadaem v0.1.2 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A by Anatol Broder under the MIT License */
 
 (function ($) {
     "use strict";
