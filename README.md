@@ -45,7 +45,7 @@ Download the _[zepto.imadaem.js](https://github.com/penibelst/imadaem-zepto)_ fi
 
 ### 4. Javascript in HTML
 
-You must write the first 3 files into the include definition.
+You must put the 3 files from the previous steps into the include definition.
 ````html
 <script src='/path/to/zepto.js' type='application/javascript'></script>
 <script src='/path/to/zepto.imadaem.js' type='application/javascript'></script>
@@ -69,9 +69,39 @@ Add `data-url` attribute to existing images.
     data-url='/path/to/image.jpg'
 />
 ````
+Learn the available options in the API description.
+
 ## API
 
-_Follows_
+### Global Options
+
+Options you can pass to the initialization call
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Mearning</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><var>timthumbPath</var></td>
+      <td>The path to Timthumb script</td>
+      <td><code>"/timthumb/timthumb.php"</code> — default</td>
+    </tr>
+    <tr>
+      <td><var>verticalRhythm</var></td>
+      <td>Resize images according to the typography</td>
+      <td>
+* <code>null</code> — default
+* <code>"line-height"</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## License
 Released under the [MIT license](http://opensource.org/licenses/MIT)
