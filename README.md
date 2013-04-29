@@ -19,7 +19,7 @@ Read what wise men think about the technique Imadaem provides:
 
 ## Example
 
-Visit my [personal website](http://penibelst.de/). Resize your browser’s window it and see what happens. Look at the network waterfall of your browser to see
+Visit my [personal website](http://penibelst.de/). Resize your browser’s window it and see how my portrait changes.
 
 ## Setup
 
