@@ -50,9 +50,9 @@ Download the _[zepto.imadaem.js](https://github.com/penibelst/imadaem-zepto)_ fi
 
 You must put the 3 files from the previous steps into the include definition.
 ````html
-<script src='/path/to/zepto.js' type='application/javascript'></script>
-<script src='/path/to/zepto.imadaem.js' type='application/javascript'></script>
-<script type='text/javascript'>
+<script src='/path/to/zepto.js'></script>
+<script src='/path/to/zepto.imadaem.js'></script>
+<script>
     $(function() {
         $(document).imadaem({
             "timthumbPath": "/path/to/timthumb.php"
