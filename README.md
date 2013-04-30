@@ -60,7 +60,7 @@ You must put the 3 files from the previous steps into the include definition.
     });
 </script>
 ````
-Learn the available javascript options in the API description.
+Learn about available [javascript options](#javascript-options) in the API description.
 
 ### 5. Data in Images
 
@@ -72,7 +72,7 @@ Add `data-url` attribute with the path to the original image. Change the `src` a
     data-url='/path/to/image-original.jpg'
 />
 ````
-Learn the available data options in the API description.
+Learn about available [data options](#data-options) in the API description.
 
 ## API
 
