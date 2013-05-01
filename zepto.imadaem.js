@@ -1,4 +1,4 @@
-/*! Imadaem v0.1.2 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
+/*! Imadaem v0.1.3 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
 
 (function ($) {
     "use strict";
@@ -22,15 +22,16 @@
                 return isNaN(v) ? 0 : v;
             },
 
-            adjustVerticalRhythm = function (element) {
+            adjustVerticalRhythm = function (element, height) {
                 if (settings.verticalRhythm === "line-height") {
                     var lh, l;
                     lh = lineHeight(element);
                     if (lh) {
-                        l = Math.max(1, Math.round($(element).height() / lh));
-                        $(element).height(lh * l);
+                        l = Math.max(1, Math.round(height / lh));
+                        height = lh * l;
                     }
                 }
+                return height;
             },
 
             scale = function () {
@@ -51,21 +52,28 @@
                     heightGuide = $(this).data("height-guide") || "";
                     maxRatio = ratio ? 0 : $(this).data("max-ratio") || 0;
 
+                    // offsetWidth can be less than clientWidth in chromium
+                    width = Math.min(this.clientWidth, this.offsetWidth);
+                    height =  Math.min(this.clientHeight, this.offsetHeight);
+
                     if (ratio) {
-                        $(this).height(Math.round($(this).width() / ratio));
+                        height = Math.round(width / ratio);
                     } else if ($(heightGuide)) {
-                        $(this).height($(heightGuide).height());
+                        height = $(heightGuide).height();
                     }
 
                     if (maxRatio) {
-                        minHeight = Math.round($(this).width() / maxRatio);
-                        $(this).height(Math.max(minHeight, $(this).height()));
+                        minHeight = Math.round(width / maxRatio);
+                        height = Math.max(minHeight, height);
                     }
 
-                    adjustVerticalRhythm(this);
+                    height = adjustVerticalRhythm(this, height);
 
-                    width = getNativeLength($(this).width());
-                    height = getNativeLength($(this).height());
+                    // prevent blinking effects
+                    $(this).height(height);
+
+                    width = getNativeLength(width);
+                    height = getNativeLength(height);
 
                     this.src = settings.timthumbPath +
                         "?src=" + encodeURIComponent(url) +
