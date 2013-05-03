@@ -1,4 +1,4 @@
-/*! Imadaem v0.1.4 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
+/*! Imadaem v0.1.5 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
 
 (function ($) {
     "use strict";
@@ -36,8 +36,7 @@
 
             scale = function () {
                 var
-                    url,
-                    gravity,
+                    timthumbParams = {},
                     ratio,
                     maxRatio,
                     height,
@@ -46,8 +45,8 @@
                     width;
 
                 $("img[data-" + settings.dataUrl + "]").each(function () {
-                    url = $(this).data(settings.dataUrl) || "";
-                    gravity = $(this).data("gravity") || "";
+                    timthumbParams.src = $(this).data(settings.dataUrl) || "";
+                    timthumbParams.a = $(this).data("gravity") || "";
                     ratio = $(this).data("ratio") || 0;
                     heightGuide = $(this).data("height-guide") || "";
                     maxRatio = ratio ? 0 : $(this).data("max-ratio") || 0;
@@ -72,15 +71,10 @@
                     // prevent blinking effects
                     $(this).height(height);
 
-                    width = getNativeLength(width);
-                    height = getNativeLength(height);
+                    timthumbParams.w = getNativeLength(width);
+                    timthumbParams.h = getNativeLength(height);
 
-                    this.src = settings.timthumbPath + "?" + $.param({
-                        "src": url,
-                        "w": width,
-                        "h": height,
-                        "a": gravity
-                    });
+                    this.src = settings.timthumbPath + "?" + $.param(timthumbParams);
                 });
             };
 
