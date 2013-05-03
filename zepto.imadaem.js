@@ -1,4 +1,4 @@
-/*! Imadaem v0.1.3 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
+/*! Imadaem v0.1.4 — Daemon for Responsive Images with Timthumb as Zepto Plugin http://git.io/AOys5A © 2013 by Anatol Broder under the MIT License */
 
 (function ($) {
     "use strict";
@@ -75,11 +75,12 @@
                     width = getNativeLength(width);
                     height = getNativeLength(height);
 
-                    this.src = settings.timthumbPath +
-                        "?src=" + encodeURIComponent(url) +
-                        "&w=" + width +
-                        "&h=" + height +
-                        "&a=" + gravity;
+                    this.src = settings.timthumbPath + "?" + $.param({
+                        "src": url,
+                        "w": width,
+                        "h": height,
+                        "a": gravity
+                    });
                 });
             };
 
