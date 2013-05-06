@@ -67,7 +67,7 @@
                         height = $(data.heightGuide).innerHeight();
                     }
 
-                    if ((!data.ratio) && (data.maxRatio)) {
+                    if (data.maxRatio) {
                         minHeight = Math.round(width / data.maxRatio);
                         height = Math.max(minHeight, height);
                     }
