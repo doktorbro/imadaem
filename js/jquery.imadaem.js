@@ -1,4 +1,4 @@
-/*! Imadaem v0.1.5 git.io/OF8Q3A */
+/*! Imadaem v0.2.0b git.io/OF8Q3A */
 
 (function ($) {
     "use strict";
@@ -7,7 +7,7 @@
         var
 
             settings = $.extend({
-                "dataUrl": "url",
+                "dataAttribute": "imadaem",
                 "timthumbPath": "/timthumb/timthumb.php",
                 "verticalRhythm": null
             }, options),
@@ -34,34 +34,41 @@
                 return height;
             },
 
+            getData = function (element) {
+                var data = $(element).data(settings.dataAttribute);
+                if ($.isPlainObject(data)) {
+                    // ratio must be a number
+                    data.ratio = parseFloat(data.ratio) || 0;
+                    // ignore maxRatio if ratio is set
+                    data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
+                } else {
+                    data = {"url": data};
+                }
+                return data;
+            },
+
             scale = function () {
                 var
-                    timthumbParams = {},
-                    ratio,
-                    maxRatio,
+                    data,
+                    timthumbParams,
                     height,
-                    heightGuide,
                     minHeight,
                     width;
 
-                $("img[data-" + settings.dataUrl + "]").each(function () {
-                    timthumbParams.src = $(this).data(settings.dataUrl) || "";
-                    timthumbParams.a = $(this).data("gravity") || "";
-                    ratio = $(this).data("ratio") || 0;
-                    heightGuide = $(this).data("height-guide") || "";
-                    maxRatio = ratio ? 0 : $(this).data("max-ratio") || 0;
+                $("img[data-" + settings.dataAttribute + "]").each(function () {
+                    data = getData(this);
 
                     width = $(this).innerWidth();
                     height = $(this).innerHeight();
 
-                    if (ratio) {
-                        height = Math.round(width / ratio);
-                    } else if ($(heightGuide)) {
-                        height = $(heightGuide).innerHeight();
+                    if (data.ratio) {
+                        height = Math.round(width / data.ratio);
+                    } else if ($(data.heightGuide).length) {
+                        height = $(data.heightGuide).innerHeight();
                     }
 
-                    if (maxRatio) {
-                        minHeight = Math.round(width / maxRatio);
+                    if ((!data.ratio) && (data.maxRatio)) {
+                        minHeight = Math.round(width / data.maxRatio);
                         height = Math.max(minHeight, height);
                     }
 
@@ -70,8 +77,12 @@
                     // prevent blinking effects
                     $(this).height(height);
 
-                    timthumbParams.w = getNativeLength(width);
-                    timthumbParams.h = getNativeLength(height);
+                    timthumbParams = {
+                        "src": data.url || "",
+                        "a": data.gravity || "",
+                        "w": getNativeLength(width),
+                        "h": getNativeLength(height)
+                    };
 
                     this.src = settings.timthumbPath + "?" + $.param(timthumbParams);
                 });
