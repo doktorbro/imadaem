@@ -55,7 +55,7 @@ You must put the 3 files from the previous steps into the include definition.
 <script>
     $(function() {
         $(document).imadaem({
-            "timthumbPath": "/path/to/timthumb.php"
+            timthumbPath: "/path/to/timthumb.php"
         });
     });
 </script>

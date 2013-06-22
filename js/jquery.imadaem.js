@@ -7,9 +7,9 @@
         var
 
             settings = $.extend({
-                "dataAttribute": "imadaem",
-                "timthumbPath": "/timthumb/timthumb.php",
-                "verticalRhythm": null
+                dataAttribute: "imadaem",
+                timthumbPath: "/timthumb/timthumb.php",
+                verticalRhythm: null
             }, options),
 
             getNativeLength = function (cssLength) {
@@ -80,10 +80,10 @@
                     $(this).height(height);
 
                     timthumbParams = {
-                        "src": data.url || "",
-                        "a": data.gravity || "",
-                        "w": getNativeLength(width),
-                        "h": getNativeLength(height)
+                        src: data.url || "",
+                        a: data.gravity || "",
+                        w: getNativeLength(width),
+                        h: getNativeLength(height)
                     };
 
                     this.src = settings.timthumbPath + "?" + $.param(timthumbParams);
