@@ -179,7 +179,7 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
 
     <tr>
       <td><var>maxRatio</var></td>
-      <td>Maximum aspect ratio. If ratio is set, maxRatio is ignored.</td>
+      <td>Maximum aspect ratio. If <var>ratio</var> is set, <var>maxRatio</var> is ignored.</td>
       <td>number</td>
       <td><code>"maxRatio": "2.4"</code></td>
     </tr>
