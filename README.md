@@ -49,6 +49,7 @@ Download the _[jquery.imadaem.js](js/jquery.imadaem.js)_ file and put it on your
 ### 4. Javascript in HTML
 
 You must put the 3 files from the previous steps into the include definition.
+
 ````html
 <script src='/path/to/jquery.js'></script>
 <script src='/path/to/jquery.imadaem.js'></script>
@@ -60,6 +61,7 @@ You must put the 3 files from the previous steps into the include definition.
     });
 </script>
 ````
+
 Learn about available [javascript options](#javascript-options) in the API description.
 
 ### 5. Data in Images
@@ -89,7 +91,10 @@ If you want Imadaem takes full effect, pass more information about the image as 
     }'
 />
 ````
+
 Learn about available [data options](#data-options) in the API description.
+
+Use _double quotes inside_ of JSON object and _single quotes outside_ of it.
 
 ## API
 
@@ -120,22 +125,24 @@ Options you can pass to the initialization call.
       <td><code>null</code></td>
     </tr>
     <tr>
-      <td><var>dataUrl</var></td>
-      <td>Data attribute that holds the original image’s URL</td>
+      <td><var>dataAttribute</var></td>
+      <td>Data attribute that holds image’s options. See [data options](#data-options).</td>
       <td><var>string</var></td>
-      <td><code>url</code></td>
+      <td><code>imadaem</code></td>
     </tr>
   </tbody>
 </table>
 
 ### Data Options
 
-Options you can pass to every image by adding the `data-imadaem` attribute. Without it Imadaem will not affect the image.
+Options you can pass to an image by setting the `data-imadaem` attribute . Without it Imadaem will not affect the image.
+
+It must be a valid [JSON](http://json.org/) object with the following properties:
 
 <table>
   <thead>
     <tr>
-      <th>Attribute</th>
+      <th>Property</th>
       <th>Meaning</th>
       <th>Values</th>
       <th>Example</th>
@@ -182,7 +189,6 @@ Options you can pass to every image by adding the `data-imadaem` attribute. With
 
   </tbody>
 </table>
-
 
 ## License
 Released under the [MIT license](http://opensource.org/licenses/MIT)
