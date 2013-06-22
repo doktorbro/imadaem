@@ -126,7 +126,7 @@ Options you can pass to the initialization call.
     </tr>
     <tr>
       <td><var>dataAttribute</var></td>
-      <td>Data attribute that holds image’s options. See [data options](#data-options).</td>
+      <td>Data attribute that holds image’s options.</td>
       <td><var>string</var></td>
       <td><code>imadaem</code></td>
     </tr>
@@ -135,9 +135,7 @@ Options you can pass to the initialization call.
 
 ### Data Options
 
-Options you can pass to an image by setting the `data-imadaem` attribute . Without it Imadaem will not affect the image.
-
-It must be a valid [JSON](http://json.org/) object with the following properties:
+Options you can pass to an image by setting the `data-imadaem` attribute. Without it Imadaem will not affect the image. It must be a valid [JSON](http://json.org/) object with the following properties:
 
 <table>
   <thead>
