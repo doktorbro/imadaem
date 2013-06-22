@@ -64,12 +64,29 @@ Learn about available [javascript options](#javascript-options) in the API descr
 
 ### 5. Data in Images
 
-Add `data-url` attribute with the path to the original image. Change the `src` attribute to a placeholder image, e. g. a low quality version.
+Change the `src` attribute to a placeholder image, e. g. a low quality version.
+
+The `data-imadaem` attribute holds the information about the image. If you know the image’s URL only, you can put it as a string:
+
 ````html
 <img
     alt='Image'
     src='/path/to/image-placeholder.jpg'
-    data-url='/path/to/image-original.jpg'
+    data-imadaem='/path/to/image-original.jpg'
+/>
+````
+
+If you want Imadaem takes full effect, pass more information about the image as a [JSON](http://json.org/) object. Example:
+
+````html
+<img
+    alt='Image'
+    src='/path/to/image-placeholder.jpg'
+    data-imadaem='{
+            "url": "/path/to/image-original.jpg",
+            "gravity": "tl",
+            "heightGuide": "#guide"
+            }'
 />
 ````
 Learn about available [data options](#data-options) in the API description.
@@ -113,7 +130,7 @@ Options you can pass to the initialization call.
 
 ### Data Options
 
-Options you can pass to every image by adding data attributes. Only the `data-url` is required. Without it Imadaem will not affect the image.
+Options you can pass to every image by adding the `data-imadaem` attribute. Without it Imadaem will not affect the image.
 
 <table>
   <thead>
@@ -129,7 +146,7 @@ Options you can pass to every image by adding data attributes. Only the `data-ur
       <td><var>url</var></td>
       <td>Path to the original</td>
       <td><var>string</var></td>
-      <td><code>data-url='/path/to/image.jpg'</code></td>
+      <td><code>"url": "/path/to/image.jpg"</code></td>
     </tr>
     
     <tr>
@@ -139,28 +156,28 @@ Options you can pass to every image by adding data attributes. Only the `data-ur
         <code>t</code>, <code>tl</code>, <code>tr</code>,
         <code>b</code>, <code>bl</code>, <code>br</code>
       </td>
-      <td><code>data-gravity='tr'</code></td>
+      <td><code>"gravity": "tr"</code></td>
     </tr>
 
     <tr>
       <td><var>ratio</var></td>
       <td>Aspect ratio</td>
       <td><var>number</var></td>
-      <td><code>data-ratio='1.5'</code></td>
+      <td><code>"ratio": "1.5"</code></td>
     </tr>
 
     <tr>
-      <td><var>max-ratio</var></td>
+      <td><var>maxRatio</var></td>
       <td>Maximum aspect ratio</td>
       <td><var>number</var></td>
-      <td><code>data-max-ratio='2.4'</code> If ratio is set, max-ratio is ignored.</td>
+      <td><code>"maxRatio": "2.4"</code> If ratio is set, maxRatio is ignored.</td>
     </tr>
     
     <tr>
-      <td><var>height-guide</var></td>
+      <td><var>heightGuide</var></td>
       <td>Element to copy the height from. ID, class or tag.</td>
       <td><var>string</var></td>
-      <td><code>data-height-guide='#header'</code></td>
+      <td><code>"heightGuide": "#header"</code></td>
     </tr>
 
   </tbody>
