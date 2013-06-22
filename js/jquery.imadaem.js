@@ -1,6 +1,6 @@
 /*! Imadaem v0.2.0b http://imadaem.penibelst.de/ */
 
-(function ($) {
+(function ($, window) {
     "use strict";
 
     $.fn.imadaem = function(options) {
@@ -93,4 +93,4 @@
         $(window).one("load", scale);
         $(window).on("resize", scale);
     };
-})(jQuery);
+})(jQuery, window);
