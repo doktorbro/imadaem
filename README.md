@@ -3,7 +3,7 @@ Imadaem — JS Daemon for Responsive Images
 
 [Imadaem](http://imadaem.penibelst.de/) is a javascript daemon for responsive images built with [jQuery](http://jquery.com/) and [Timthumb](http://code.google.com/p/timthumb/).
 
-Imadaem replaces the placeholder image by the dedicated size image on every significant browser event: load, resize. The website _feels_ pretty fast. The visitor sees the low quality file nearly immediately and can start to interact with the site: scroll, zoom, etc. After the right resolution file is loaded, all the visitor maybe notices is the blurry image gets sharp.
+Imadaem replaces the placeholder image by the dedicated size image on every significant window event: load, resize, rotate. The website _feels_ pretty fast. The visitor sees the low quality file nearly immediately and can start to interact with the site: scroll, zoom, etc. After the right resolution file is loaded, all the visitor maybe notices is the blurry image gets sharp.
 
 The small overhead by loading two images instead of one is negligible. In return you get low latency user experience.
 
@@ -113,9 +113,15 @@ Options you can pass to the initialization call.
   </thead>
   <tbody>
     <tr>
+      <td><var>dataAttribute</var></td>
+      <td>Data attribute that holds image’s options.</td>
+      <td>string</td>
+      <td><code>imadaem</code></td>
+    </tr>
+    <tr>
       <td><var>timthumbPath</var></td>
       <td>Path to Timthumb script</td>
-      <td><var>string</var></td>
+      <td>string</td>
       <td><code>/timthumb/timthumb.php</code></td>
     </tr>
     <tr>
@@ -125,10 +131,10 @@ Options you can pass to the initialization call.
       <td><code>null</code></td>
     </tr>
     <tr>
-      <td><var>dataAttribute</var></td>
-      <td>Data attribute that holds image’s options.</td>
-      <td><var>string</var></td>
-      <td><code>imadaem</code></td>
+      <td><var>windowEvents</var></td>
+      <td>One or more space-separated event types</td>
+      <td>string</td>
+      <td><code>resize orientationchange</code></td>
     </tr>
   </tbody>
 </table>

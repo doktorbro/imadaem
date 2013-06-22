@@ -1,4 +1,4 @@
-/*! Imadaem v0.2.0 http://imadaem.penibelst.de/ */
+/*! Imadaem v0.3.0b http://imadaem.penibelst.de/ */
 
 (function ($, window) {
     "use strict";
@@ -9,7 +9,8 @@
             settings = $.extend({
                 dataAttribute: "imadaem",
                 timthumbPath: "/timthumb/timthumb.php",
-                verticalRhythm: null
+                verticalRhythm: null,
+                windowEvents: "resize orientationchange"
             }, options),
 
             getNativeLength = function (cssLength) {
@@ -91,6 +92,6 @@
             };
 
         $(window).one("load", scale);
-        $(window).on("resize", scale);
+        $(window).on(settings.windowEvents, scale);
     };
 })(jQuery, window);
