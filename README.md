@@ -1,7 +1,7 @@
 Imadaem — JS Daemon for Responsive Images
 =============
 
-_Imadaem_ is a javascript daemon for responsive images built with [Timthumb](http://code.google.com/p/timthumb/) and [jQuery](http://jquery.com/).
+[Imadaem](http://imadaem.penibelst.de/) is a javascript daemon for responsive images built with [jQuery](http://jquery.com/) and [Timthumb](http://code.google.com/p/timthumb/).
 
 Imadaem replaces the placeholder image by the dedicated size image on every significant browser event: load, resize. The website _feels_ pretty fast. The visitor sees the low quality file nearly immediately and can start to interact with the site: scroll, zoom, etc. After the right resolution file is loaded, all the visitor maybe notices is the blurry image gets sharp.
 
@@ -94,7 +94,7 @@ If you want Imadaem takes full effect, pass more information about the image as 
 
 Learn about available [data options](#data-options) in the API description.
 
-Use _double quotes inside_ of JSON object and _single quotes outside_ of it.
+Use **double quotes inside** of JSON object and **single quotes outside** of it.
 
 ## API
 
@@ -135,7 +135,7 @@ Options you can pass to the initialization call.
 
 ### Data Options
 
-Options you can pass to an image by setting the `data-imadaem` attribute. Without it Imadaem will not affect the image. It must be a valid [JSON](http://json.org/) object with the following properties:
+Options you can pass to an image by setting the `data-imadaem` attribute. Without it Imadaem will not affect the image. It must be a **valid [JSON](http://json.org/) object** with the following properties:
 
 <table>
   <thead>
@@ -173,9 +173,9 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
 
     <tr>
       <td><var>maxRatio</var></td>
-      <td>Maximum aspect ratio</td>
+      <td>Maximum aspect ratio. If ratio is set, maxRatio is ignored.</td>
       <td><var>number</var></td>
-      <td><code>"maxRatio": "2.4"</code> If ratio is set, maxRatio is ignored.</td>
+      <td><code>"maxRatio": "2.4"</code></td>
     </tr>
     
     <tr>
@@ -189,6 +189,6 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
 </table>
 
 ## License
-Released under the [MIT license](http://opensource.org/licenses/MIT)
+Released under the [MIT license](http://opensource.org/licenses/MIT).
 
 © 2013 [Anatol Broder](http://penibelst.de/)
