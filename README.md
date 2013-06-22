@@ -83,10 +83,10 @@ If you want Imadaem takes full effect, pass more information about the image as 
     alt='Image'
     src='/path/to/image-placeholder.jpg'
     data-imadaem='{
-            "url": "/path/to/image-original.jpg",
-            "gravity": "tl",
-            "heightGuide": "#guide"
-            }'
+        "url": "/path/to/image-original.jpg",
+        "gravity": "tl",
+        "heightGuide": "#guide"
+    }'
 />
 ````
 Learn about available [data options](#data-options) in the API description.
