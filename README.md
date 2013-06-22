@@ -37,7 +37,7 @@ You can make things run in 15 minutes.
 
 Download the _[timthumb.php](http://code.google.com/p/timthumb/)_ file and put it on your server. Follow the official [instruction](http://www.binarymoon.co.uk/2010/08/timthumb/). You can put your default options inside the _timthumb-config.php_ file. For questions read the documentation inside of _timthumb.php_.
 
-**Make sure you can resize an image before next steps.**
+**Make sure you can resize an image with your Timthumb installation before next steps.**
 
 ### 2. jQuery
 
@@ -94,7 +94,7 @@ If you want Imadaem takes full effect, pass more information about the image as 
 
 Learn about available [data options](#data-options) in the API description.
 
-Use **double quotes inside** of JSON object and **single quotes outside** of it.
+Use **double** quotes **inside** of JSON object and **single** quotes **outside** of it for HTML.
 
 ## API
 
@@ -156,7 +156,7 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
     <tr>
       <td><var>url</var></td>
       <td>Path to the original</td>
-      <td><var>string</var></td>
+      <td>string</td>
       <td><code>"url": "/path/to/image.jpg"</code></td>
     </tr>
     
@@ -173,21 +173,21 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
     <tr>
       <td><var>ratio</var></td>
       <td>Aspect ratio</td>
-      <td><var>number</var></td>
+      <td>number</td>
       <td><code>"ratio": "1.5"</code></td>
     </tr>
 
     <tr>
       <td><var>maxRatio</var></td>
       <td>Maximum aspect ratio. If ratio is set, maxRatio is ignored.</td>
-      <td><var>number</var></td>
+      <td>number</td>
       <td><code>"maxRatio": "2.4"</code></td>
     </tr>
     
     <tr>
       <td><var>heightGuide</var></td>
       <td>Element to copy the height from. ID, class or tag.</td>
-      <td><var>string</var></td>
+      <td>string</td>
       <td><code>"heightGuide": "#header"</code></td>
     </tr>
 
