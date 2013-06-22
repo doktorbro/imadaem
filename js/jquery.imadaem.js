@@ -1,4 +1,4 @@
-/*! Imadaem v0.2.0b git.io/OF8Q3A */
+/*! Imadaem v0.2.0b http://imadaem.penibelst.de/ */
 
 (function ($) {
     "use strict";

@@ -1,4 +1,4 @@
-Imadaem —  JS Daemon for Responsive Images
+Imadaem — JS Daemon for Responsive Images
 =============
 
 _Imadaem_ is a javascript daemon for responsive images built with [Timthumb](http://code.google.com/p/timthumb/) and [jQuery](http://jquery.com/).
