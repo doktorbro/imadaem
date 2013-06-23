@@ -1,4 +1,4 @@
-/*! Imadaem v0.3.0 http://imadaem.penibelst.de/ */
+/*! Imadaem v0.3.1b http://imadaem.penibelst.de/ */
 
 (function ($, window) {
     "use strict";
@@ -18,15 +18,15 @@
                 return Math.round(cssLength * density);
             },
 
-            lineHeight = function (element) {
-                var v = parseFloat($(element).css("line-height"));
-                return isNaN(v) ? 0 : v;
+            lineHeight = function ($element) {
+                var lh = parseFloat($element.css("line-height"));
+                return isNaN(lh) ? 0 : lh;
             },
 
-            adjustVerticalRhythm = function (element, height) {
+            adjustVerticalRhythm = function ($element, height) {
                 if (settings.verticalRhythm === "line-height") {
                     var lh, l;
-                    lh = lineHeight(element);
+                    lh = lineHeight($element);
                     if (lh) {
                         l = Math.max(1, Math.round(height / lh));
                         height = lh * l;
@@ -35,8 +35,8 @@
                 return height;
             },
 
-            getData = function (element) {
-                var data = $(element).data(settings.dataAttribute);
+            getData = function ($element) {
+                var data = $element.data(settings.dataAttribute);
                 if ($.isPlainObject(data)) {
                     // ratio must be a number
                     data.ratio = parseFloat(data.ratio) || 0;
@@ -45,13 +45,14 @@
                     // gravity must be a combination of ["l", "r", "t", "b"]
                     data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, "").substr(0, 2) : "";
                 } else {
-                    data = {"url": data};
+                    data = {url: data};
                 }
                 return data;
             },
 
             scale = function () {
                 var
+                    $this,
                     data,
                     timthumbParams,
                     height,
@@ -59,10 +60,11 @@
                     width;
 
                 $("img[data-" + settings.dataAttribute + "]").each(function () {
-                    data = getData(this);
+                    $this = $(this);
+                    data = getData($this);
 
-                    width = $(this).innerWidth();
-                    height = $(this).innerHeight();
+                    width = $this.innerWidth();
+                    height = $this.innerHeight();
 
                     if (data.ratio) {
                         height = Math.round(width / data.ratio);
@@ -75,10 +77,10 @@
                         height = Math.max(minHeight, height);
                     }
 
-                    height = adjustVerticalRhythm(this, height);
+                    height = adjustVerticalRhythm($this, height);
 
                     // prevent blinking effects
-                    $(this).height(height);
+                    $this.height(height);
 
                     timthumbParams = {
                         src: data.url || "",
@@ -87,7 +89,7 @@
                         h: getNativeLength(height)
                     };
 
-                    this.src = settings.timthumbPath + "?" + $.param(timthumbParams);
+                    $this.attr("src", settings.timthumbPath + "?" + $.param(timthumbParams));
                 });
             };
 
