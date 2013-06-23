@@ -1,4 +1,4 @@
-/*! Imadaem v0.3.1b http://imadaem.penibelst.de/ */
+/*! Imadaem v0.3.1 http://imadaem.penibelst.de/ */
 
 (function ($, window) {
     "use strict";
