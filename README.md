@@ -186,7 +186,7 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
     
     <tr>
       <td><var>heightGuide</var></td>
-      <td>Element to copy the height from. ID, class or tag.</td>
+      <td>Selector of elements to copy the height from</td>
       <td>string</td>
       <td><code>"heightGuide": "#header"</code></td>
     </tr>
