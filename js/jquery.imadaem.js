@@ -1,4 +1,4 @@
-/*! Imadaem v0.3.1 http://imadaem.penibelst.de/ */
+/*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
 (function ($, window) {
     "use strict";
@@ -93,7 +93,8 @@
                 });
             };
 
-        $(window).one("load", scale);
-        $(window).on(settings.windowEvents, scale);
+        $(window)
+            .one("load", scale)
+            .on(settings.windowEvents, scale);
     };
 })(jQuery, window);
