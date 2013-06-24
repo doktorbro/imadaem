@@ -5,6 +5,7 @@
 
     $.fn.imadaem = function(options) {
         var
+            $elements = this,
 
             settings = $.extend({
                 dataAttribute: "imadaem",
@@ -59,7 +60,7 @@
                     minHeight,
                     width;
 
-                $("img[data-" + settings.dataAttribute + "]").each(function () {
+                $elements.each(function () {
                     $this = $(this);
                     data = getData($this);
 
@@ -96,5 +97,7 @@
         $(window)
             .one("load", scale)
             .on(settings.windowEvents, scale);
+
+        return this;
     };
 })(jQuery, window);

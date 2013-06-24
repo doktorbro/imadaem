@@ -44,31 +44,14 @@ Download the _[timthumb.php](http://code.google.com/p/timthumb/)_ file and put i
 Download the _[jquery.js](http://jquery.com/)_ file and put it on your server.
 
 ### 3. Imadaem
+
 Download the _[jquery.imadaem.js](js/jquery.imadaem.js)_ file and put it on your server.
 
-### 4. Javascript in HTML
-
-You must put the 3 files from the previous steps into the include definition.
-
-````html
-<script src='/path/to/jquery.js'></script>
-<script src='/path/to/jquery.imadaem.js'></script>
-<script>
-    $(function() {
-        $(document).imadaem({
-            timthumbPath: "/path/to/timthumb.php"
-        });
-    });
-</script>
-````
-
-Learn about available [javascript options](#javascript-options) in the API description.
-
-### 5. Data in Images
+### 4. Data in Images
 
 Change the `src` attribute to a placeholder image, e. g. a low quality version.
 
-The `data-imadaem` attribute holds the information about the image. If you know the image’s URL only, you can put it as a string:
+The `data-imadaem` attribute holds the information about the original image. If you know the image’s URL only, you can put it as a string:
 
 ````html
 <img
@@ -95,6 +78,25 @@ If you want Imadaem takes full effect, pass more information about the image as 
 Learn about available [data options](#data-options) in the API description.
 
 Use **double** quotes **inside** of JSON object and **single** quotes **outside** of it for HTML.
+
+### 5. Javascript in HTML
+
+You must put the 3 files from the previous steps into the include definition of your HTML file. Pass a CSS selector, i. e. `$("img[data-imadaem]")` to Imadaem.
+
+````html
+<script src='/path/to/jquery.js'></script>
+<script src='/path/to/jquery.imadaem.js'></script>
+<script>
+    $(function() {
+        $("img[data-imadaem]").imadaem({
+            timthumbPath: "/path/to/timthumb.php"
+        });
+    });
+</script>
+````
+
+Learn about available [javascript options](#javascript-options) in the API description.
+
 
 ## API
 
