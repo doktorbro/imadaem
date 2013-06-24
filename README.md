@@ -81,7 +81,7 @@ Use **double** quotes **inside** of JSON object and **single** quotes **outside*
 
 ### 5. Javascript in HTML
 
-You must put the 3 files from the previous steps into the include definition of your HTML file. Pass a CSS selector, i. e. `$("img[data-imadaem]")` to Imadaem.
+You must put the 3 files from the previous steps into the include definition of your HTML file. Pass a CSS selector, e. g. `$("img[data-imadaem]")` to Imadaem.
 
 ````html
 <script src='/path/to/jquery.js'></script>
