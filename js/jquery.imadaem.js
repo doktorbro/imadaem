@@ -39,19 +39,17 @@
             getData = function ($element) {
                 var data = $element.data(settings.dataAttribute);
 
-                if (typeof data === "string") {
-                    data = {url: data};
-                } else if ($.isPlainObject(data)) {
-
+                if ($.isPlainObject(data)) {
                     // ratio must be a number
                     data.ratio = parseFloat(data.ratio) || 0;
-
                     // ignore maxRatio if ratio is set
                     data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
-
                     // gravity must be a combination of ["l", "r", "t", "b"]
                     data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, "").substr(0, 2) : "";
+                } else {
+                    data = {url: data};
                 }
+
                 return $.extend({
                     url: "",
                     gravity: "",
