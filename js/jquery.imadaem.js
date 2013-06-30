@@ -59,6 +59,22 @@
                 }, data);
             },
 
+            setSrc = function ($element, newSrc) {
+                var
+                    oldSrc = $element.attr("src"),
+                    errors = 0;
+
+                $element
+                    .on("error", function() {
+                        // fall back to the previous src once
+                        if (!errors) {
+                            errors += 1;
+                            $(this).attr("src", oldSrc);
+                        }
+                    })
+                    .attr("src", newSrc);
+            },
+
             scale = function () {
                 var
                     $this,
@@ -102,7 +118,7 @@
                         h: getNativeLength(height)
                     };
 
-                    $this.attr("src", settings.timthumbPath + "?" + $.param(timthumbParams));
+                    setSrc($this, settings.timthumbPath + "?" + $.param(timthumbParams));
                 });
             };
 
