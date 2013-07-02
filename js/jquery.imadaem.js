@@ -1,4 +1,4 @@
-/*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
+/*! Imadaem v0.4.0 * imadaem.penibelst.de * © 2013 Anatol Broder * MIT License */
 
 (function ($, window) {
     "use strict";
