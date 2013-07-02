@@ -9,8 +9,8 @@
 
             settings = $.extend({
                 dataAttribute: "imadaem",
+                overflowFixed: "hidden",
                 timthumbPath: "/timthumb/timthumb.php",
-                verticalRhythm: null,
                 windowEvents: "resize orientationchange"
             }, options),
 
@@ -19,44 +19,27 @@
                 return Math.round(cssLength * density);
             },
 
-            lineHeight = function ($element) {
-                var lh = parseFloat($element.css("line-height"));
-                return isNaN(lh) ? 0 : lh;
-            },
-
-            adjustVerticalRhythm = function ($element, height) {
-                if (settings.verticalRhythm === "line-height") {
-                    var lh, l;
-                    lh = lineHeight($element);
-                    if (lh) {
-                        l = Math.max(1, Math.round(height / lh));
-                        height = lh * l;
-                    }
-                }
-                return height;
-            },
-
             getData = function ($element) {
                 var data = $element.data(settings.dataAttribute);
 
                 if ($.isPlainObject(data)) {
-                    // ratio must be a number
-                    data.ratio = parseFloat(data.ratio) || 0;
-                    // ignore maxRatio if ratio is set
-                    data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
                     // gravity must be a combination of ["l", "r", "t", "b"]
                     data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, "").substr(0, 2) : "";
                 } else {
+                    // data attribute contains the url string
                     data = {url: data};
                 }
 
-                return $.extend({
-                    url: "",
-                    gravity: "",
-                    ratio: 0,
-                    maxRatio: 0,
-                    heightGuide: ""
-                }, data);
+                return data;
+            },
+
+            getStyle = function ($element) {
+                return {
+                    width: getNativeLength($element.innerWidth()),
+                    height: getNativeLength($element.innerHeight()),
+                    widthIsFixed: $element.css("overflow-x") === settings.overflowFixed,
+                    heightIsFixed: $element.css("overflow-y") === settings.overflowFixed
+                };
             },
 
             setSrc = function ($element, newSrc) {
@@ -75,56 +58,55 @@
                     .attr("src", newSrc);
             },
 
-            scale = function () {
+            buildTimthumbUrl = function (resizeParameters) {
+                var
+                    timthumbParameters = {
+                        src: resizeParameters.url,
+                        a: resizeParameters.gravity,
+                        w: (resizeParameters.heightIsFixed && !resizeParameters.widthIsFixed) ? 0 : resizeParameters.width,
+                        h: (resizeParameters.widthIsFixed && !resizeParameters.heightIsFixed) ? 0 : resizeParameters.height,
+                        // zoom_crop
+                        // 1: fill out, 3: fill in
+                        zc: (resizeParameters.widthIsFixed || resizeParameters.heightIsFixed) ? 1 : 3
+                    };
+
+                return settings.timthumbPath + "?" + $.param(timthumbParameters);
+            },
+
+            resize = function () {
                 var
                     $this,
-                    data,
-                    timthumbParams,
-                    height,
-                    minHeight,
-                    width;
+                    resizeParameters;
 
                 $elements.each(function () {
                     $this = $(this);
 
-                    data = getData($this);
-                    if (!data.url) {
+                    resizeParameters = $.extend(
+                        {
+                            url: "",
+                            gravity: "",
+                            width: 0,
+                            height: 0,
+                            widthIsFixed: false,
+                            heightIsFixed: false
+                        },
+                        // from HTML
+                        getData($this),
+                        // from CSS and window
+                        getStyle($this)
+                    );
+
+                    if (!resizeParameters.url) {
                         return;
                     }
 
-                    width = $this.innerWidth();
-                    height = $this.innerHeight();
-
-                    if (data.ratio) {
-                        height = Math.round(width / data.ratio);
-                    } else if ($(data.heightGuide).length) {
-                        height = $(data.heightGuide).innerHeight();
-                    }
-
-                    if (data.maxRatio) {
-                        minHeight = Math.round(width / data.maxRatio);
-                        height = Math.max(minHeight, height);
-                    }
-
-                    height = adjustVerticalRhythm($this, height);
-
-                    // prevent blinking effects
-                    $this.height(height);
-
-                    timthumbParams = {
-                        src: data.url || "",
-                        a: data.gravity || "",
-                        w: getNativeLength(width),
-                        h: getNativeLength(height)
-                    };
-
-                    setSrc($this, settings.timthumbPath + "?" + $.param(timthumbParams));
+                    setSrc($this, buildTimthumbUrl(resizeParameters));
                 });
             };
 
         $(window)
-            .one("load", scale)
-            .on(settings.windowEvents, scale);
+            .one("load", resize)
+            .on(settings.windowEvents, resize);
 
         return this;
     };
