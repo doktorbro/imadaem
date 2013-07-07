@@ -9,7 +9,7 @@
 
             settings = $.extend({
                 dataAttribute: "imadaem",
-                overflowFixed: "hidden",
+                overflowDefined: "hidden",
                 timthumbPath: "/timthumb/timthumb.php",
                 windowEvents: "resize orientationchange"
             }, options),
@@ -37,8 +37,8 @@
                 return {
                     width: getNativeLength($element.innerWidth()),
                     height: getNativeLength($element.innerHeight()),
-                    widthIsFixed: $element.css("overflow-x") === settings.overflowFixed,
-                    heightIsFixed: $element.css("overflow-y") === settings.overflowFixed
+                    widthIsDefined: $element.css("overflow-x") === settings.overflowDefined,
+                    heightIsDefined: $element.css("overflow-y") === settings.overflowDefined
                 };
             },
 
@@ -63,11 +63,11 @@
                     timthumbParameters = {
                         src: resizeParameters.url,
                         a: resizeParameters.gravity,
-                        w: (resizeParameters.heightIsFixed && !resizeParameters.widthIsFixed) ? 0 : resizeParameters.width,
-                        h: (resizeParameters.widthIsFixed && !resizeParameters.heightIsFixed) ? 0 : resizeParameters.height,
+                        w: (resizeParameters.heightIsDefined && !resizeParameters.widthIsDefined) ? 0 : resizeParameters.width,
+                        h: (resizeParameters.widthIsDefined && !resizeParameters.heightIsDefined) ? 0 : resizeParameters.height,
                         // zoom_crop
                         // 1: fill out, 3: fill in
-                        zc: (resizeParameters.widthIsFixed || resizeParameters.heightIsFixed) ? 1 : 3
+                        zc: (resizeParameters.widthIsDefined || resizeParameters.heightIsDefined) ? 1 : 3
                     };
 
                 return settings.timthumbPath + "?" + $.param(timthumbParameters);
@@ -87,8 +87,8 @@
                             gravity: "",
                             width: 0,
                             height: 0,
-                            widthIsFixed: false,
-                            heightIsFixed: false
+                            widthIsDefined: false,
+                            heightIsDefined: false
                         },
                         // from HTML
                         getData($this),
