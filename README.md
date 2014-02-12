@@ -161,7 +161,7 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
       <td>string</td>
       <td><code>"url": "/path/to/image.jpg"</code></td>
     </tr>
-    
+
     <tr>
       <td><var>gravity</var></td>
       <td>Position of the most important piece</td>
@@ -185,7 +185,7 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
       <td>number</td>
       <td><code>"maxRatio": "2.4"</code></td>
     </tr>
-    
+
     <tr>
       <td><var>heightGuide</var></td>
       <td>Selector of elements to copy the height from</td>
@@ -199,4 +199,4 @@ Options you can pass to an image by setting the `data-imadaem` attribute. Withou
 ## License
 Released under the [MIT license](http://opensource.org/licenses/MIT).
 
-© 2013 [Anatol Broder](http://penibelst.de/)
+© 2014 [Anatol Broder](http://penibelst.de/)
