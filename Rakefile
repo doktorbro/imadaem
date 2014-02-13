@@ -3,7 +3,7 @@ require 'rake'
 
 namespace :site do
   desc "Commit the local site to the gh-pages branch and publish to GitHub Pages"
-  task :publish => [:history] do
+  task :publish do
     # Ensure the gh-pages dir exists so we can generate into it.
     puts "Checking for gh-pages dir..."
     unless File.exist?("./gh-pages")
