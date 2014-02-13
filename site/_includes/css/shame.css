@@ -170,3 +170,7 @@ h1 {
     border: none;
     vertical-align: center;
 }
+
+.post .author {
+    font-style: italic;
+}
