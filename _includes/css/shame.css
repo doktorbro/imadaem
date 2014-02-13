@@ -44,21 +44,36 @@ h2 {
     padding: 0;
 }
 
+h3 {
+    font-size: 1.2em;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+}
+
 p, ul {
     margin: 0 0 1.5em 0;
     padding: 0;
 }
 
-h1, h2, p, ul, blockquote {
+h1, h2, h3, p, ul, blockquote {
     margin-left: 4%;
     width: 92%;
-    /* 3 columns grid */
-    @media (min-width: 53.6em) {
+
+}
+
+
+/* 3 columns grid */
+@media (min-width: 53.6em) {
+    h1, h2, h3, p, ul, blockquote {
         margin-left: 36%;
         width: 60%;
     }
-    /* 4 columns grid */
-    @media (min-width: 75em) {
+}
+
+/* 4 columns grid */
+@media (min-width: 75em) {
+    h1, h2, h3, p, ul, blockquote {
         margin-left: 52%;
         width: 44%;
     }
@@ -102,7 +117,7 @@ a:link{color:#116}
 a:visited{color:#66113c;border-bottom-color:#e3c5d4}
 a:hover,a:active{background-color:#ee9;border-bottom-color:#ee9}
 
-.header, .setup, .contribution {
+.header, .setup, .contribution, .blog {
     margin-bottom: 3em;
 }
 
@@ -173,4 +188,8 @@ h1 {
 
 .post .author {
     font-style: italic;
+}
+
+.blog__post__date {
+    color: #c5c5e3;
 }
