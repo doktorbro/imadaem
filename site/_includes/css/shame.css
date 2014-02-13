@@ -183,7 +183,7 @@ h1 {
     padding: 0;
     overflow: visible;
     border: none;
-    vertical-align: center;
+    vertical-align: middle;
 }
 
 .post .author {
