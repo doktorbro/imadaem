@@ -52,13 +52,21 @@ p, ul {
 h1, h2, p, ul, blockquote {
     margin-left: 4%;
     width: 92%;
-    /* 3 columns grid */
-    @media (min-width: 53.6em) {
+
+}
+
+
+/* 3 columns grid */
+@media (min-width: 53.6em) {
+    h1, h2, p, ul, blockquote {
         margin-left: 36%;
         width: 60%;
     }
-    /* 4 columns grid */
-    @media (min-width: 75em) {
+}
+
+/* 4 columns grid */
+@media (min-width: 75em) {
+    h1, h2, p, ul, blockquote {
         margin-left: 52%;
         width: 44%;
     }
