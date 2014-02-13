@@ -1,0 +1,172 @@
+/*-----------------------*\
+    $Shame
+\*-----------------------*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin: 0 0 0.6em 0;
+    padding: 0;
+}
+
+/* Imadaem = 5.25 em */
+/* 3 * 5.25 = 0.28 * x */
+
+
+@media (min-width: 53.6em) {
+    h1 {
+        margin-left: 4%;
+        width: 28%;
+        float: left;
+    }
+}
+
+@media (min-width: 56.25em) {
+    h1 {
+        font-size: 3em;
+        line-height: 1;
+        margin-bottom: 0.5em;
+    }
+}
+
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+p, ul {
+    margin: 0 0 1.5em 0;
+    padding: 0;
+}
+
+h1, h2, p, ul, blockquote {
+    margin-left: 4%;
+    width: 92%;
+    /* 3 columns grid */
+    @media (min-width: 53.6em) {
+        margin-left: 36%;
+        width: 60%;
+    }
+    /* 4 columns grid */
+    @media (min-width: 75em) {
+        margin-left: 52%;
+        width: 44%;
+    }
+}
+
+
+
+blockquote {
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+blockquote:before {
+    content: "\201C";
+    color: #c5c5e3;
+    float: left;
+    font-size: 5em;
+    line-height: 0;
+    margin-top: 0.3em;
+}
+
+blockquote small:before {
+    content: "\2014\A0";
+}
+
+li, blockquote p {
+    margin-left: 3em;
+    width: auto;
+}
+
+li {
+    list-style-position: outside;
+}
+
+
+a{border-bottom:0.0625em solid #c5c5e3;text-decoration:none}
+
+a:link{color:#116}
+a:visited{color:#66113c;border-bottom-color:#e3c5d4}
+a:hover,a:active{background-color:#ee9;border-bottom-color:#ee9}
+
+.header, .setup, .contribution {
+    margin-bottom: 3em;
+}
+
+.header {
+    margin-top: 3em;
+}
+
+.demo {
+    margin-bottom: 1.5em;
+}
+
+.market {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.market-fixed-size-crop__image--fixed {
+    overflow: hidden;
+    width: 50%;
+    height: 15em;
+}
+
+.market-fixed-size-crop__image--fixed-width {
+    overflow-x: hidden;
+    width: 50%;
+    overflow-y: visible;
+    height: auto;
+}
+
+.market-fixed-size-crop__image--fixed-height {
+    overflow-x: visible;
+    width: auto;
+    overflow-y: hidden;
+    height: 15em;
+}
+
+.market-fixed-size-crop__image--unfixed {
+    overflow-x: visible;
+    width: auto;
+    overflow-y: visible;
+    height: auto;
+}
+
+h1 {
+    float: none;
+}
+
+.demo__box-defined {
+    width: 40%;
+    height: 50%;
+    background: yellow;
+    overflow: hidden;
+    border: red 1em solid;
+    display: inline-block;
+}
+
+.demo__box-defined img {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto auto;
+    padding: 0;
+    overflow: visible;
+    border: none;
+    vertical-align: center;
+}

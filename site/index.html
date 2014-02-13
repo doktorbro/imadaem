@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Imadaem</title>
+    <meta name='viewport' content='width=device-width'>
+    <link rel='stylesheet' href='/ui/css/screen.css'>
+    <link rel='icon' href='/ui/img/favicon-16.png' sizes='16x16' type='image/png'>
+    <link rel='icon' href='/ui/img/favicon-32.png' sizes='32x32' type='image/png'>
+    <link href="https://github.com/penibelst/imadaem/commits/master.atom" rel="alternate" title="Recent Commits to imadaem:master" type="application/atom+xml" />
+    <!-- http://opengraphprotocol.org/ -->
+    <meta property='og:url' content='http://imadaem.penibelst.de/'>
+    <meta property='og:title' content='Imadaem'>
+    <meta property='og:description' content='Imadaem is a daemon for responsive images built with JS and PHP.'>
+    <!-- https://dev.twitter.com/docs/cards -->
+    <meta name='twitter:site' content='@penibelst'>
+</head>
+<body>
+    <div class='header'>
+        <h1>Imadaem</h1>
+        <p>Imadaem is a daemon for respon&shy;sive images built with <abbr>JS</abbr> and <abbr>PHP</abbr>. The code by <a href='http://penibelst.de/'>Anatol Broder</a> is available under the <abbr>MIT</abbr> License at <a href='https://github.com/penibelst/imadaem'>Github</a>. Imadaem depends on <a href='http://jquery.com/'>Jquery</a> and <a href='http://code.google.com/p/timthumb/'>Timthumb</a>.</p>
+
+        <blockquote><p>Very nice combining low quality image place&shy;holders with respon&shy;sive images for the second higher resolution image. This achieves both goals&nbsp;— the preloader kicks off the low res image request early so the user sees some&shy;thing quickly, and then <abbr>JS</abbr> kicks off the high res image request with the appro&shy;priate size to make it faster and reduce data costs.</p>
+        <p><small><a href='http://www.stevesouders.com/blog/2013/04/26/i/#comment-60047'>Steve Souders</a>, Head Performance Engineer at Google</small></p></blockquote>
+    </div>
+
+    <div class='setup'>
+        <h2>Setup</h2>
+        <ul>
+            <li>Download the <a href='https://github.com/penibelst/imadaem/archive/master.zip'>zip file</a> from Github.</li>
+            <li>Follow the <a href='https://github.com/penibelst/imadaem#setup'>setup guide</a>.</li>
+            <li>Read the <a href='https://github.com/penibelst/imadaem#api'><abbr>API</abbr> documentation</a>.</li>
+        </ul>
+    </div>
+
+    <div class='demo'>
+        <h2>Demo</h2>
+        <p><cite>Indonesian market</cite> by <a href='http://dobernat.de/'>Natalie Doberschütz</a> (<a href='http://creativecommons.org/licenses/by/4.0/'>license</a>)</p>
+
+<div class='gallery-defined'><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=/2013/06/29/12.jpg&amp;a=l&amp;w=150&amp;h=150'
+    alt='Indonesian market 12'
+    data-imadaem='{
+        "url": "/2013/06/29/12.jpg",
+        "gravity": "l"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/13.jpg&amp;a=&amp;w=150&amp;h=150'
+    alt='Indonesian market 13'
+    data-imadaem='{
+        "url": "/2013/06/29/13.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/01.jpg&amp;a=lb&amp;w=150&amp;h=150'
+    alt='Indonesian market 1'
+    data-imadaem='{
+        "url": "/2013/06/29/01.jpg",
+        "gravity": "lb"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/03.jpg&amp;a=l&amp;w=150&amp;h=150'
+    alt='Indonesian market 3'
+    data-imadaem='{
+        "url": "/2013/06/29/03.jpg",
+        "gravity": "l"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/04.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 4'
+    data-imadaem='{
+        "url": "/2013/06/29/04.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/05.jpg&amp;a=rt&amp;w=100&amp;h=100'
+    alt='Indonesian market 5'
+    data-imadaem='{
+        "url": "/2013/06/29/05.jpg",
+        "gravity": "rt"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/06.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 6'
+    data-imadaem='{
+        "url": "/2013/06/29/06.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/07.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 7'
+    data-imadaem='{
+        "url": "/2013/06/29/07.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/10.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 8'
+    data-imadaem='{
+        "url": "/2013/06/29/10.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/02.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 2'
+    data-imadaem='{
+        "url": "/2013/06/29/02.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/09.jpg&amp;a=lb&amp;w=100&amp;h=100'
+    alt='Indonesian market 9'
+    data-imadaem='{
+        "url": "/2013/06/29/09.jpg",
+        "gravity": "lb"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/08.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 10'
+    data-imadaem='{
+        "url": "/2013/06/29/08.jpg",
+        "gravity": ""
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/11.jpg&amp;a=lt&amp;w=100&amp;h=100'
+    alt='Indonesian market 11'
+    data-imadaem='{
+        "url": "/2013/06/29/11.jpg",
+        "gravity": "lt"
+    }'
+><img
+    src='http://assets.penibelst.de/timthumb/timthumb.php?src=%2F2013/06/29/00.jpg&amp;a=&amp;w=100&amp;h=100'
+    alt='Indonesian market 00'
+    data-imadaem='{
+        "url": "/2013/06/29/00.jpg",
+        "gravity": ""
+    }'
+></div></div>
+
+    <div class='contribution'>
+        <h2>Development</h2>
+        <p>Feel free to submit bugs, patches, and questions on <a href='https://github.com/penibelst/imadaem'>Github</a>. You can also just watch the repo or subscribe to the master branch <a href='https://github.com/penibelst/imadaem/commits/master.atom'>atom feed</a>.</p>
+    </div>
+
+<script src='/ui/js/jquery.js'></script>
+<script src='/ui/js/jquery.imadaem.js'></script>
+<script>
+    $(function() {
+        $("img")
+            .imadaem({
+                timthumbPath: "http://assets.penibelst.de/timthumb/timthumb.php"
+            });
+    });
+</script>
+</body>
+</html>
+
