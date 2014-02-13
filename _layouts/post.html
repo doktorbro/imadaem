@@ -1,0 +1,41 @@
+---
+layout: minified
+---
+
+<!DOCTYPE html>
+<html dir='ltr' lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>{{ page.title }}</title>
+    <meta name='viewport' content='width=device-width'>
+    <link rel='stylesheet' href='/ui/css/screen.css'>
+    <link rel='icon' href='/ui/img/favicon-16.png' sizes='16x16' type='image/png'>
+    <link rel='icon' href='/ui/img/favicon-32.png' sizes='32x32' type='image/png'>
+    <link href='https://github.com/penibelst/imadaem/commits/master.atom' rel='alternate' title='Recent Commits to imadaem:master' type='application/atom+xml' />
+    <!-- http://opengraphprotocol.org/ -->
+    <meta property='og:url' content='{{ page.url }}'>
+    <meta property='og:title' content='{{ page.title }}'>
+    <meta property='og:description' content='Imadaem is a daemon for responsive images built with JS and PHP.'>
+    <!-- https://dev.twitter.com/docs/cards -->
+    <meta name='twitter:site' content='@penibelst'>
+</head>
+<body class='post'>
+
+    <div class='title'>
+        <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class='author'>
+      <p>By <a href='https://github.com/{{ page.author }}'>@{{ page.author }}</a>, {{ page.date | date: '%F' }}</p>
+    </div>
+
+    <div class='content'>
+    {{ content }}
+    </div>
+
+    <div class='footer'>
+      <p><a href='/'>&larr;&nbsp;Imadaem</a></p>
+    </div>
+</body>
+</html>
+
