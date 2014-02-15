@@ -1,0 +1,1 @@
+{% assign ids = include.ids | split: " " %}{% for i in ids %}{% include image.html id=i class=include.class %}{% endfor %}
