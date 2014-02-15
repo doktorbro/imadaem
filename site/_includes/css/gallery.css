@@ -2,12 +2,23 @@
     $Gallery
 \*-----------------------*/
 
-.gallery-defined img {
+
+.gallery--defined img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* grid */
+
+.gallery__item {
     display: inline-block;
     margin-left: 4%;
     margin-bottom: 1.5em;
-    overflow: hidden; /* dimensions are defined */
     padding: 0;
+    vertical-align: top;
 
     /* dimensions
      * mobile first starts at window width 15em
@@ -15,21 +26,20 @@
      * image min-height is 15em
      * design grid ends by 80em. See $Grid
      */
-
-    width: 92%;
     height: 15em;
+    width: 92%;
 }
 
 /* two columns */
 @media (min-width: 34.1em) {
-    .gallery-defined img {
+    .gallery__item {
         width: 44%;
     }
 }
 
 /* three columns */
 @media (min-width: 53.6em) {
-    .gallery-defined img {
+    .gallery__item {
         margin-bottom: 3em;
         width: 28%;
     }
@@ -37,7 +47,7 @@
 
 /* four columns */
 @media (min-width: 75em) {
-    .gallery-defined img {
+    .gallery__item {
         width: 20%;
     }
 }
