@@ -1,5 +1,5 @@
 #  FIELD       | TYPE   | REQUIRED | EXAMPLE
-#  url         | string | y        | /path/to/image.jpg
+#  url         | string | y        | /yyyy/mm/dd/id.jpg
 #  description | string | n        | Image
 #  width (px)  | number | y        | 300
 #  height (px) | number | y        | 200
