@@ -1,0 +1,98 @@
+#  FIELD       | TYPE   | REQUIRED | EXAMPLE
+#  url         | string | y        | /path/to/image.jpg
+#  description | string | n        | Image
+#  width (px)  | number | y        | 300
+#  height (px) | number | y        | 200
+#  gravity     | string | n        | ((l|r)(t|b))
+#  md5         | string | n        | 1234567890abcdef1234567890abcdef
+
+-
+  url: /2013/06/29/00.jpg
+  description: Indonesian market passage
+  width: 1440
+  height: 960
+  md5: cb0476255fb70f5a81e88190dd84d17e
+-
+  url: /2013/06/29/01.jpg
+  description: Fresh fish
+  width: 1440
+  height: 960
+  gravity: "lb"
+  md5: fb8e128b954f42a66126c9caaee6fa8f
+-
+  url: /2013/06/29/02.jpg
+  description: Woman folding banana leaves
+  width: 1440
+  height: 960
+  md5: 742aa0493f3cc81d22dd31673c67d1ae
+-
+  url: /2013/06/29/03.jpg
+  description: Meals on wheels
+  width: 1440
+  height: 960
+  gravity: "l"
+  md5: 2c7c60d214e844a4f1ce9dc855d81433
+-
+  url: /2013/06/29/04.jpg
+  description: Jackfruits
+  width: 960
+  height: 1440
+  md5: 8cd10c4ec6352126f93b789e94d6a16f
+-
+  url: /2013/06/29/05.jpg
+  description: Woman sitting in her banana garden
+  width: 1440
+  height: 960
+  gravity: "rt"
+  md5: ee5fbbfc216658e473a99005e51da271
+-
+  url: /2013/06/29/06.jpg
+  description: Vintage scale
+  width: 1440
+  height: 960
+  md5: ca238faa5ad5b488a77f25f021be387e
+-
+  url: /2013/06/29/07.jpg
+  description: Woman sitting in her market stall
+  width: 1440
+  height: 960
+  md5: a0a7aaa45a812aef5a336dd2b78a0e0e
+-
+  url: /2013/06/29/08.jpg
+  description: Woman with baby
+  width: 1440
+  height: 960
+  md5: 57676098d54811af21811ff7d9eae899
+-
+  url: /2013/06/29/09.jpg
+  description: Sleeping woman
+  width: 1440
+  height: 960
+  gravity: "lb"
+  md5: f7f10c1008d11ad5d57e5acef7c0a752
+-
+  url: /2013/06/29/10.jpg
+  description: Hot spices
+  width: 960
+  height: 1440
+  md5: 6074dc21123290c2d17216e4475db1d0
+-
+  url: /2013/06/29/11.jpg
+  description: Dried fish
+  width: 1440
+  height: 960
+  gravity: "lt"
+  md5: 6988c7ef587285a377e5750b4e167047
+-
+  url: /2013/06/29/12.jpg
+  description: Woman paying her goods
+  width: 1440
+  height: 960
+  gravity: "l"
+  md5: 11c629178f12cbe9d7ddfa177f269b80
+-
+  url: /2013/06/29/13.jpg
+  description: Woman screening rice
+  width: 1440
+  height: 960
+  md5: a867446fa969d295571674f9d5981138
