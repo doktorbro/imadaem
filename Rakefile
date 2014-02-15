@@ -31,7 +31,7 @@ namespace :site do
     sha = `git log`.match(/[a-z0-9]{40}/)[0]
     Dir.chdir('gh-pages') do
       sh "git add ."
-      sh "git commit -m 'Updating to #{sha}.'"
+      sh "git commit -m 'Update to #{sha}'"
       sh "git push origin gh-pages"
     end
     puts 'Done.'
