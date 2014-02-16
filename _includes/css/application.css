@@ -1,0 +1,27 @@
+/* Zoom at big width */
+@media (min-width: 62.5em) {
+    html {
+        font-size: 1.6vw;
+    }
+}
+
+
+h1 {
+    font-weight: bold;
+}
+
+
+img, .th {
+    max-width: none;
+    width: 100%;
+}
+
+.image-square {
+    height: 15em;
+}
+
+.breadcrumbs > *,
+.breadcrumbs > * a,
+.breadcrumbs > * span {
+    text-transform: none;
+}
