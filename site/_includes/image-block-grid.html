@@ -1,0 +1,7 @@
+<ul class='{{ include.class }}'>
+{% assign ids = include.ids | split: " " %}
+{% for i in ids %}
+    {% assign n = i | times: 1 %}
+    <li><a href='{{ site.data.config.images | append: site.data.images[n].url }}' class='th'>{% include image.html id=n class="image-square" %}</a></li>
+{% endfor %}
+</ul>

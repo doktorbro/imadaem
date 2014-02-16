@@ -1,22 +1,6 @@
 ---
 ---
 
-
-/*
- * Grid
- * 4 columns
- * column width = 12%
- * gutter width =  4%
- * min. column width = 15em
- *
- * => 1 column/screen: screen:  0    , column: 92%
- *    2 column/screen: screen: 34.1em, column: 44%
- *    3 column/screen: screen: 53.6em, column: 28%
- *    4 column/screen: screen: 75.0em, column: 20%
- */
-
-
-{% include css/normalize.css %}
-{% include css/zoom.css %}
-{% include css/gallery.css %}
-{% include css/shame.css %}
+{% include css/normalize.min.css %}
+{% include css/foundation.min.css %}
+{% include css/application.css %}

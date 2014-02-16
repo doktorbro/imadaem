@@ -1,4 +1,0 @@
-{% assign ids = include.ids | split: " " %}
-{% for i in ids %}
-    <div class='gallery__item'>{% include image.html id=i class=include.class %}</div>
-{% endfor %}
