@@ -19,3 +19,9 @@ img, .th {
 .image-square {
     height: 15em;
 }
+
+.breadcrumbs > *,
+.breadcrumbs > * a,
+.breadcrumbs > * span {
+    text-transform: none;
+}
