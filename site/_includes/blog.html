@@ -7,8 +7,7 @@
 
   <h6>
     <a href="{{ post.url }}" itemprop="name">{{ post.title }}</a>
-    <small><meta itemprop="datePublished" content="{{ post.date | date: '%Y-%m-%d' }}">
-    {{ post.date | date: '%Y-%m-%d' }}</small>
+    <small itemprop="datePublished">{{ post.date | date: '%F' }}</small>
   </h6>
 
 </div>
