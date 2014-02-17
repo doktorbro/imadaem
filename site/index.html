@@ -1,54 +1,54 @@
 ---
 layout: default
-description: "Imadaem is a daemon for responsive images built with JS and PHP."
+description: Imadaem is a daemon for responsive images built with JS and PHP.
 title: Imadaem
 ---
 
-<div class='row'>
+<div class="row">
     <div class="small-12 medium-8 columns">
         <h1>Imadaem</h1>
-        <p>Imadaem is a daemon for respon&shy;sive images built with <abbr>JS</abbr> and <abbr>PHP</abbr>. The code by <a href='http://penibelst.de/'>Anatol Broder</a> is available under the <abbr>MIT</abbr> License at <a href='{{ site.data.config.repository }}'>Github</a>. Imadaem depends on <a href='http://jquery.com/'>Jquery</a> and <a href='http://code.google.com/p/timthumb/'>Timthumb</a>.</p>
+        <p>Imadaem is a daemon for respon&shy;sive images built with <abbr>JS</abbr> and <abbr>PHP</abbr>. The code by <a href="http://penibelst.de/">Anatol Broder</a> is available under the <abbr>MIT</abbr> License at <a href="{{ site.data.config.repository }}">Github</a>. Imadaem depends on <a href="http://jquery.com/">Jquery</a> and <a href="http://code.google.com/p/timthumb/">Timthumb</a>.</p>
 
         <blockquote>
             <p>Very nice combining low quality image place&shy;holders with respon&shy;sive images for the second higher resolution image. This achieves both goals&nbsp;— the preloader kicks off the low res image request early so the user sees some&shy;thing quickly, and then <abbr>JS</abbr> kicks off the high res image request with the appro&shy;priate size to make it faster and reduce data costs.</p>
-            <p>&mdash; <em><a href='http://www.stevesouders.com/blog/2013/04/26/i/#comment-60047'>Steve Souders</a>, Head Performance Engineer at Google</em></p>
+            <p>&mdash; <em><a href="http://www.stevesouders.com/blog/2013/04/26/i/#comment-60047">Steve Souders</a>, Head Performance Engineer at Google</em></p>
         </blockquote>
 
         <h2>Setup</h2>
         <ul>
-            <li>Download the <a href='{{ site.data.config.repository }}/archive/master.zip'>zip file</a> from Github.</li>
-            <li>Follow the <a href='{{ site.data.config.repository }}#setup'>setup guide</a>.</li>
-            <li>Read the <a href='{{ site.data.config.repository }}#api'><abbr>API</abbr> documentation</a>.</li>
+            <li>Download the <a href="{{ site.data.config.repository }}/archive/master.zip">zip file</a> from Github.</li>
+            <li>Follow the <a href="{{ site.data.config.repository }}#setup">setup guide</a>.</li>
+            <li>Read the <a href="{{ site.data.config.repository }}#api"><abbr>API</abbr> documentation</a>.</li>
         </ul>
     </div>
 </div>
 
-<div class='row'>
+<div class="row">
     <div class="small-12 columns">
         <h2>Demo</h2>
-        <p><cite>Indonesian market</cite> by <a href='http://dobernat.de/'>Natalie Doberschütz</a> (<a href='http://creativecommons.org/licenses/by/4.0/'>license</a>)</p>
+        <p><cite>Indonesian market</cite> by <a href="http://dobernat.de/">Natalie Doberschütz</a> (<a href="http://creativecommons.org/licenses/by/4.0/">license</a>)</p>
 
-        {% include image-block-grid.html ids="12 13 1 3 4 5 6 7 10 2 9 8 11 0" class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" %}
+        {% include image-block-grid.html ids='12 13 1 3 4 5 6 7 10 2 9 8 11 0' class='small-block-grid-1 medium-block-grid-2 large-block-grid-3' %}
     </div>
 </div>
 
-<div class='row'>
+<div class="row">
     <div class="small-12 medium-6 columns">
         {% include blog.html %}
     </div>
     <div class="small-12 medium-6 columns">
         <h2>Development</h2>
-        <p>Feel free to submit bugs, patches, and questions on <a href='{{ site.data.config.repository }}/issues'>Github</a>. You can also just watch the repo or subscribe to the master branch <a href='{{ site.data.config.repository }}/commits/master.atom'>atom feed</a>.</p>
+        <p>Feel free to submit bugs, patches, and questions on <a href="{{ site.data.config.repository }}/issues">Github</a>. You can also just watch the repo or subscribe to the master branch <a href="{{ site.data.config.repository }}/commits/master.atom">atom feed</a>.</p>
     </div>
 </div>
 
-<script src='/ui/js/jquery.js'></script>
-<script src='/ui/js/jquery.imadaem.js'></script>
+<script src="/ui/js/jquery.js"></script>
+<script src="/ui/js/jquery.imadaem.js"></script>
 <script>
     $(function() {
-        $("img")
+        $('img')
             .imadaem({
-                timthumbPath: "{{ site.data.config.timthumb }}"
+                timthumbPath: '{{ site.data.config.timthumb }}'
             });
     });
 </script>

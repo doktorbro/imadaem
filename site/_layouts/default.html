@@ -3,21 +3,21 @@ layout: minified
 ---
 
 <!DOCTYPE html>
-<html dir='ltr' lang='en'>
+<html dir="ltr" lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <title>{{ page.title }}</title>
-    <meta name='viewport' content='width=device-width'>
-    <link rel='stylesheet' href='/ui/css/screen.css'>
-    <link rel='icon' href='/ui/img/favicon-16.png' sizes='16x16' type='image/png'>
-    <link rel='icon' href='/ui/img/favicon-32.png' sizes='32x32' type='image/png'>
-    <link href='{{ site.data.config.repository }}/commits/master.atom' rel='alternate' title='Recent Commits to imadaem:master' type='application/atom+xml' />
-    <!-- http://opengraphprotocol.org/ -->
-    <meta property='og:url' content='{{ page.url }}'>
-    <meta property='og:title' content='{{ page.title }}'>
-    <meta property='og:description' content='{{ page.description }}'>
-    <!-- https://dev.twitter.com/docs/cards -->
-    <meta name='twitter:site' content='@penibelst'>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/ui/css/screen.css">
+  <link rel="icon" href="/ui/img/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="/ui/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link href="{{ site.data.config.repository }}/commits/master.atom" rel="alternate" title="Recent Commits to imadaem:master" type="application/atom+xml">
+  <!-- http://opengraphprotocol.org/ -->
+  <meta property="og:url" content="{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <!-- https://dev.twitter.com/docs/cards -->
+  <meta name="twitter:site" content="@penibelst">
 </head>
 <body>
 {{ content }}

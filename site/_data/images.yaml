@@ -17,7 +17,7 @@
   description: Fresh fish
   width: 1440
   height: 960
-  gravity: "lb"
+  gravity: lb
   md5: fb8e128b954f42a66126c9caaee6fa8f
 -
   url: /2013/06/29/2.jpg
@@ -30,7 +30,7 @@
   description: Meals on wheels
   width: 1440
   height: 960
-  gravity: "l"
+  gravity: l
   md5: 2c7c60d214e844a4f1ce9dc855d81433
 -
   url: /2013/06/29/4.jpg
@@ -43,7 +43,7 @@
   description: Woman sitting in her banana garden
   width: 1440
   height: 960
-  gravity: "rt"
+  gravity: rt
   md5: ee5fbbfc216658e473a99005e51da271
 -
   url: /2013/06/29/6.jpg
@@ -68,7 +68,7 @@
   description: Sleeping woman
   width: 1440
   height: 960
-  gravity: "lb"
+  gravity: lb
   md5: f7f10c1008d11ad5d57e5acef7c0a752
 -
   url: /2013/06/29/10.jpg
@@ -81,14 +81,14 @@
   description: Dried fish
   width: 1440
   height: 960
-  gravity: "lt"
+  gravity: lt
   md5: 6988c7ef587285a377e5750b4e167047
 -
   url: /2013/06/29/12.jpg
   description: Woman paying her goods
   width: 1440
   height: 960
-  gravity: "l"
+  gravity: l
   md5: 11c629178f12cbe9d7ddfa177f269b80
 -
   url: /2013/06/29/13.jpg

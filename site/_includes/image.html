@@ -1,9 +1,11 @@
-{% assign id = include.id | times: 1 %}{% assign image = site.data.images[id] %}<img
-    class='{{ include.class }}'
-    alt='{{ image.description }}'
-    src='{{ site.data.config.timthumb }}?src={{ image.url }}&amp;a={{ image.gravity }}&amp;w=100&amp;h=100&amp;f=2'
-    data-imadaem='{
-        "url": "{{ image.url }}",
-        "gravity": "{{ image.gravity }}"
-    }'
+{% assign id = include.id | times: 1 %}
+{% assign image = site.data.images[id] %}
+<img
+  class="{{ include.class }}"
+  alt="{{ image.description }}"
+  src="{{ site.data.config.timthumb }}?src={{ image.url }}&amp;a={{ image.gravity }}&amp;w=100&amp;h=100&amp;f=2"
+  data-imadaem='{
+    "url": "{{ image.url }}",
+    "gravity": "{{ image.gravity }}"
+  }'
 />
