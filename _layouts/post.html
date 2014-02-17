@@ -1,45 +1,23 @@
 ---
-layout: minified
+layout: default
 ---
 
-<!DOCTYPE html>
-<html dir='ltr' lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <title>{{ page.title }}</title>
-    <meta name='viewport' content='width=device-width'>
-    <link rel='stylesheet' href='/ui/css/screen.css'>
-    <link rel='icon' href='/ui/img/favicon-16.png' sizes='16x16' type='image/png'>
-    <link rel='icon' href='/ui/img/favicon-32.png' sizes='32x32' type='image/png'>
-    <link href='https://github.com/penibelst/imadaem/commits/master.atom' rel='alternate' title='Recent Commits to imadaem:master' type='application/atom+xml' />
-    <!-- http://opengraphprotocol.org/ -->
-    <meta property='og:url' content='{{ page.url }}'>
-    <meta property='og:title' content='{{ page.title }}'>
-    <meta property='og:description' content='Imadaem is a daemon for responsive images built with JS and PHP.'>
-    <!-- https://dev.twitter.com/docs/cards -->
-    <meta name='twitter:site' content='@penibelst'>
-</head>
-<body>
-    <div class='row'>
-        <div class="small-12 columns">
-            <ul class="breadcrumbs">
-                <li><a href="/">Imadaem</a></li>
-                <li class="unavailable">Blog</li>
-                <li class="current">{{ page.date | date: '%Y' }}</li>
-            </ul>
-        </div>
-    </div>
+<div class="row">
+  <div class="small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/">Imadaem</a></li>
+      <li class="unavailable">Blog</li>
+      <li class="current">{{ page.date | date: '%Y' }}</li>
+    </ul>
+  </div>
+</div>
 
-    <div class='row'>
-        <div class="small-12 medium-8 columns">
-            <h1>{{ page.title }}</h1>
+<div class="row">
+  <div class="small-12 medium-8 columns">
+    <h1>{{ page.title }}</h1>
 
-            <h6 class="subheader"><em>{{ page.date | date: '%F' }} by <a href='https://github.com/{{ page.author }}'>@{{ page.author }}</a></em></h6>
+    <h6 class="subheader"><em>{{ page.date | date: '%F' }} by <a href="https://github.com/{{ page.author }}">@{{ page.author }}</a></em></h6>
 
-            {{ content }}
-        </div>
-    </div>
-
-</body>
-</html>
-
+    {{ content }}
+  </div>
+</div>

@@ -1,16 +1,16 @@
-<div class="blog" itemscope itemtype="http://schema.org/Blog">
-<h2 class="blog__name" itemprop="name">Blog</h2>
+<div itemscope itemtype="http://schema.org/Blog">
+  <h2 itemprop="name">Blog</h2>
 
-{% for post in site.posts %}
-<div itemprop="blogPost"
+  {% for post in site.posts %}
+  <div itemprop="blogPost"
     itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h6>
-    <a href="{{ post.url }}" itemprop="name">{{ post.title }}</a>
-    <small><meta itemprop="datePublished" content="{{ post.date | date: '%Y-%m-%d' }}">
-    {{ post.date | date: '%Y-%m-%d' }}</small>
-  </h6>
+    <h6>
+      <a href="{{ post.url }}" itemprop="name">{{ post.title }}</a>
+      <small itemprop="datePublished">{{ post.date | date: '%F' }}</small>
+    </h6>
 
-</div>
-{% endfor %}
+  </div>
+  {% endfor %}
+
 </div>
