@@ -1,5 +1,5 @@
 require 'rake'
-
+require 'html/proofer'
 
 namespace :site do
   desc "Commit the local site to the gh-pages branch and publish to GitHub Pages"
@@ -37,4 +37,10 @@ namespace :site do
     puts 'Done.'
   end
 
+end
+
+task :test do
+  sh "bundle exec jekyll build --trace"
+  # ignore href="#" for the "Copy to clipboard" button
+  HTML::Proofer.new("./_site").run
 end
