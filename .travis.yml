@@ -1,5 +1,5 @@
 # build
-script: "./script/cibuild"
+script: './script/cibuild.sh'
 
 # environment
 language: ruby
