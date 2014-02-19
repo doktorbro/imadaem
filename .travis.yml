@@ -8,8 +8,7 @@ rvm:
 
 branches:
   only:
-    - gh-pages
-    - /.*/
+    - master
 
 notifications:
   email: false
