@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'kramdown'
-gem 'jekyll'
-
 group :test do
+  gem 'kramdown'
+  gem 'jekyll'
   gem 'html-proofer'
   gem 'rake'
 end
