@@ -3,6 +3,8 @@ Imadaem — JS Daemon for Responsive Images
 
 [Imadaem](http://imadaem.penibelst.de/) is a javascript daemon for responsive images built with [jQuery](http://jquery.com/) and [Timthumb](http://code.google.com/p/timthumb/).
 
+[![Build Status](https://travis-ci.org/penibelst/imadaem.png?branch=master)](https://travis-ci.org/penibelst/imadaem)
+
 Imadaem replaces the placeholder image by the dedicated size image on every significant browser window event: load, resize, rotate. The website _feels_ pretty fast. The visitor sees the low quality file nearly immediately and can start to interact with the site: scroll, zoom, etc. After the right resolution file is loaded, all the visitor maybe notices is the blurry image gets sharp.
 
 The small overhead by loading two images instead of one is negligible. In return you get low latency user experience.
