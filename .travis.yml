@@ -1,0 +1,14 @@
+# build
+script: './script/cibuild.sh'
+
+# environment
+language: ruby
+rvm:
+  - 2.0.0
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
