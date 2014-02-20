@@ -17,7 +17,7 @@ All text files should end in a single newline `\n`.
 
 ## Pull Requests
 
-Create a pull request against `master` branch and describe what your change does and the why you think it should be merged. Investigate if [Travis tests][3] fail.
+Create a pull request against *master* branch and describe what your change does and the why you think it should be merged. Investigate if [Travis tests][3] fail.
 
 [1]: http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
 [2]: http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
