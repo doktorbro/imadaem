@@ -37,11 +37,11 @@ namespace :site do
     puts 'Done.'
   end
 
-end
-
-task :test do
-  Dir.chdir('site') do
-    sh 'bundle exec jekyll build --trace'
-    HTML::Proofer.new('./_site').run
+  desc 'Test the site with Proofer'
+  task :test do
+    Dir.chdir('site') do
+      sh 'bundle exec jekyll build --trace'
+      HTML::Proofer.new('./_site').run
+    end
   end
 end

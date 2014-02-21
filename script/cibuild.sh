@@ -3,4 +3,4 @@
 set -e
 
 echo "building the site..."
-bundle exec rake test
+bundle exec rake site:test
