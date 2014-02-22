@@ -2,5 +2,8 @@
 
 set -e
 
-echo "building the site..."
+echo "Testing the library …"
+bundle exec rake test
+
+echo "Testing the site …"
 bundle exec rake site:test

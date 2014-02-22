@@ -45,3 +45,8 @@ namespace :site do
     end
   end
 end
+
+desc 'Test the library with Qunit'
+task :qunit do
+  sh 'phantomjs test/index.html'
+end
