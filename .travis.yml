@@ -1,14 +1,16 @@
 # build
-script: './script/cibuild.sh'
+script:
+  - 'phantomjs scripts/qunit-runner.js test/index.html'
+  - './script/cibuild.sh'
 
 # environment
 language: ruby
 rvm:
-  - 2.0.0
+  - '2.0.0'
 
 branches:
   only:
-    - master
+    - 'master'
 
 notifications:
   email: false
