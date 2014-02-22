@@ -1,6 +1,6 @@
 # build
 script:
-  - 'phantomjs scripts/qunit-runner.js test/index.html'
+  - 'phantomjs script/qunit-runner.js test/index.html'
   - './script/cibuild.sh'
 
 # environment
