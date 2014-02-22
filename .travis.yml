@@ -1,3 +1,6 @@
+before_script:
+  - 'git submodule update --init'
+
 # build
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
