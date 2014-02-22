@@ -1,3 +1,7 @@
+/**
+ * https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js
+ */
+
 var system = require('system');
 
 /**
