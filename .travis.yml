@@ -1,5 +1,5 @@
 # build
-script: './script/cibuild.sh'
+script: 'phantomjs test/index.html'
 
 # environment
 language: ruby
