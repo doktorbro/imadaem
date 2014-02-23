@@ -1,0 +1,3 @@
+[submodule "script/qunit-phantomjs-runner"]
+	path = script/qunit-phantomjs-runner
+	url = git://github.com/jonkemp/qunit-phantomjs-runner.git
