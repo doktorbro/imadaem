@@ -7,11 +7,11 @@
 #  md5         | string | n        | 1234567890abcdef1234567890abcdef
 
 -
-  url: /2013/06/29/0.jpg
-  description: Indonesian market passage
-  width: 1440
-  height: 960
-  md5: cb0476255fb70f5a81e88190dd84d17e
+  url: /2014/02/23/0.gif
+  description: The tiniest transparent image
+  width: 1
+  height: 1
+  md5: 325472601571f31e1bf00674c368d335
 -
   url: /2013/06/29/1.jpg
   description: Fresh fish
@@ -96,3 +96,9 @@
   width: 1440
   height: 960
   md5: a867446fa969d295571674f9d5981138
+-
+  url: /2013/06/29/14.jpg
+  description: Indonesian market passage
+  width: 1440
+  height: 960
+  md5: cb0476255fb70f5a81e88190dd84d17e
