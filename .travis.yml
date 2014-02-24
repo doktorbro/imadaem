@@ -1,6 +1,5 @@
 before_install:
-  - 'sudo apt-get update -qq'
-  - 'sudo apt-get install -qq closure-linter'
+  - 'easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz'
 
 # build
 script:
