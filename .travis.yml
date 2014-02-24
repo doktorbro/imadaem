@@ -1,10 +1,10 @@
 before_install:
-  - 'svn checkout http://closure-linter.googlecode.com/svn/trunk/ script/closure-linter'
+  - 'sudo apt-get install closure-linter'
 
 # build
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
-  - './script/closure-linter/closure_linter/gjslint.py -r ./js'
+  - 'gjslint -r ./js'
   - './script/cibuild.sh'
 
 # environment
