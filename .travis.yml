@@ -1,6 +1,10 @@
+before_install:
+  - 'npm install jslint jshint -g'
+
 # build
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
+  - './script/jslint.sh'
   - './script/cibuild.sh'
 
 # environment
