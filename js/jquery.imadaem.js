@@ -1,5 +1,7 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
+/*jslint indent: 2 */
+
 (function ($, window) {
   'use strict';
 
