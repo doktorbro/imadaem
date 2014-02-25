@@ -1,3 +1,3 @@
-#!/usr/bin/env node
+#!/bin/sh
 
 jshint './js/jquery.imadaem.js'

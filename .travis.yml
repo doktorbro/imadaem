@@ -6,7 +6,7 @@ before_install:
 # build
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
-  - './script/jshint-runner.js'
+  - './script/jshint-runner.sh'
   - 'gjslint -r ./js'
   - './script/cibuild.sh'
 
