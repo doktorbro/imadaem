@@ -1,9 +1,9 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
-(function($, window) {
+(function ($, window) {
   'use strict';
 
-  $.fn.imadaem = (function(options) {
+  $.fn.imadaem = function(options) {
     var
       $elements = this,
 
@@ -14,17 +14,17 @@
         windowEvents: 'resize orientationchange'
       }, options),
 
-      getNativeLength = (function(cssLength) {
+      getNativeLength = (function (cssLength) {
         var density = window.devicePixelRatio || 1;
         return Math.round(cssLength * density);
       }()),
 
-      lineHeight = (function($element) {
+      lineHeight = function ($element) {
         var lh = parseFloat($element.css('line-height'));
         return isNaN(lh) ? 0 : lh;
-      }()),
+      },
 
-      adjustVerticalRhythm = (function($element, height) {
+      adjustVerticalRhythm = function ($element, height) {
         if (settings.verticalRhythm === 'line-height') {
           var lh, l;
           lh = lineHeight($element);
@@ -34,9 +34,9 @@
           }
         }
         return height;
-      }()),
+      },
 
-      getData = (function($element) {
+      getData = function ($element) {
         var data = $element.data(settings.dataAttribute);
 
         if ($.isPlainObject(data)) {
@@ -46,8 +46,8 @@
           data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
           // gravity must be a combination of ['l', 'r', 't', 'b']
           data.gravity = data.gravity ?
-            data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) :
-            '';
+              data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) :
+              '';
         } else {
           data = {url: data};
         }
@@ -59,25 +59,25 @@
           maxRatio: 0,
           heightGuide: ''
         }, data);
-      }()),
+      },
 
-      setSrc = (function($element, newSrc) {
+      setSrc = function ($element, newSrc) {
         var
           oldSrc = $element.attr('src'),
           errors = 0;
 
-        $element.
-          on('error', (function() {
+        $element
+          .on('error', function() {
             // fall back to the previous src once
             if (!errors) {
               errors += 1;
               $(this).attr('src', oldSrc);
             }
-          }())).
-          attr('src', newSrc);
-      }()),
+          })
+          .attr('src', newSrc);
+      },
 
-      scale = (function() {
+      scale = function () {
         var
           $this,
           data,
@@ -86,7 +86,7 @@
           minHeight,
           width;
 
-        $elements.each(function() {
+        $elements.each(function () {
           $this = $(this);
 
           data = getData($this);
@@ -120,15 +120,14 @@
             h: getNativeLength(height)
           };
 
-          setSrc($this, settings.timthumbPath + '?' +
-            $.param(timthumbParams));
+          setSrc($this, settings.timthumbPath + '?' + $.param(timthumbParams));
         });
-      }());
+      };
 
-    $(window).
-      one('load', scale).
-      on(settings.windowEvents, scale);
+    $(window)
+      .one('load', scale)
+      .on(settings.windowEvents, scale);
 
     return this;
-  }());
-}(jQuery, window));
+  };
+})(jQuery, window);
