@@ -1,6 +1,6 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
-/*jslint closure: true, indent: 4 */
+/*jslint closure: true, indent: 4, regexp: true */
 /*global jQuery: false, window: false */
 
 (function ($, window) {
