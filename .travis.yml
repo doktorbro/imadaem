@@ -1,5 +1,6 @@
 before_install:
   - 'npm install jshint -g'
+  - 'jshint --version'
   - 'sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz'
 
 # build
