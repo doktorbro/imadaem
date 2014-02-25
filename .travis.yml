@@ -1,7 +1,7 @@
 before_install:
-  - 'npm install jshint -g'
-  - 'jshint --version'
-  - 'jshint ./js/jquery.imadaem.js'
+  - 'npm install jslint -g'
+  - 'jslint --version'
+  - 'jslint ./js/jquery.imadaem.js'
   - 'sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz'
 
 # build
