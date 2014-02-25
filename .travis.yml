@@ -1,11 +1,11 @@
 before_install:
   - 'npm install jshint -g'
-  - './script/jshint-runner.sh'
   - 'sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz'
 
 # build
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
+  - './script/jshint-runner.sh'
   - 'gjslint -r ./js'
   - './script/cibuild.sh'
 
