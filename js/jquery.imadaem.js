@@ -3,7 +3,7 @@
 (function($, window) {
   'use strict';
 
-  $.fn.imadaem = function(options) {
+  $.fn.imadaem = (function(options) {
     var
       $elements = this,
 
@@ -65,13 +65,13 @@
           errors = 0;
 
         $element
-          .on('error', function() {
+          .on('error', (function() {
             // fall back to the previous src once
             if (!errors) {
               errors += 1;
               $(this).attr('src', oldSrc);
             }
-          })
+          }())
           .attr('src', newSrc);
       }()),
 
@@ -128,5 +128,5 @@
       .on(settings.windowEvents, scale);
 
     return this;
-  };
+  }());
 }(jQuery, window));
