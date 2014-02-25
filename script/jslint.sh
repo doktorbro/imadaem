@@ -1,3 +1,4 @@
 #!/bin/sh
 
-jslint './js/jquery.imadaem.js'
+jslint js/jquery.imadaem.js
+jshint js/jquery.imadaem.js

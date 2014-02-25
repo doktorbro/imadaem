@@ -5,8 +5,6 @@ before_install:
 script:
   - 'phantomjs script/qunit-phantomjs-runner/runner.js test/index.html'
   - './script/jslint.sh'
-  - 'jshint --help'
-  - 'jshint js/jquery.imadaem.js'
   - './script/cibuild.sh'
 
 # environment
