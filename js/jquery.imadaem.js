@@ -24,7 +24,7 @@
         return isNaN(lh) ? 0 : lh;
       }()),
 
-      adjustVerticalRhythm = function($element, height) {
+      adjustVerticalRhythm = (function($element, height) {
         if (settings.verticalRhythm === 'line-height') {
           var lh, l;
           lh = lineHeight($element);
@@ -34,9 +34,9 @@
           }
         }
         return height;
-      },
+      }()),
 
-      getData = function($element) {
+      getData = (function($element) {
         var data = $element.data(settings.dataAttribute);
 
         if ($.isPlainObject(data)) {
@@ -57,9 +57,9 @@
           maxRatio: 0,
           heightGuide: ''
         }, data);
-      },
+      }()),
 
-      setSrc = function($element, newSrc) {
+      setSrc = (function($element, newSrc) {
         var
           oldSrc = $element.attr('src'),
           errors = 0;
@@ -73,9 +73,9 @@
             }
           })
           .attr('src', newSrc);
-      },
+      }()),
 
-      scale = function() {
+      scale = (function() {
         var
           $this,
           data,
@@ -121,7 +121,7 @@
           setSrc($this, settings.timthumbPath + '?' +
             $.param(timthumbParams));
         });
-      };
+      }());
 
     $(window)
       .one('load', scale)
