@@ -14,15 +14,15 @@
         windowEvents: 'resize orientationchange'
       }, options),
 
-      getNativeLength = function(cssLength) {
+      getNativeLength = (function(cssLength) {
         var density = window.devicePixelRatio || 1;
         return Math.round(cssLength * density);
-      },
+      }()),
 
-      lineHeight = function($element) {
+      lineHeight = (function($element) {
         var lh = parseFloat($element.css('line-height'));
         return isNaN(lh) ? 0 : lh;
-      },
+      }()),
 
       adjustVerticalRhythm = function($element, height) {
         if (settings.verticalRhythm === 'line-height') {
@@ -129,4 +129,4 @@
 
     return this;
   };
-})(jQuery, window);
+}(jQuery, window));
