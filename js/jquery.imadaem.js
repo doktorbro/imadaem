@@ -16,7 +16,7 @@
 
       getNativeLength = function (cssLength) {
         var density = window.devicePixelRatio || 1;
-        return Math.round(csLength * density);
+        return Math.round(cssLength * density);
       },
 
       lineHeight = function ($element) {
