@@ -1,4 +1,5 @@
 before_install:
+  - 'sudo npm install jshint -g'
   - 'sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz'
 
 # build
