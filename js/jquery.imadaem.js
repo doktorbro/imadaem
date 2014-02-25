@@ -1,11 +1,12 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
+/*jslint closure: true, indent: 2 */
 /*global jQuery: false, window: false */
 
 (function ($, window) {
     "use strict";
 
-    $.fn.imadaem = function(options) {
+    $.fn.imadaem = function (options) {
         var
             $elements = this,
 
@@ -67,7 +68,7 @@
                     errors = 0;
 
                 $element
-                    .on("error", function() {
+                    .on("error", function () {
                         // fall back to the previous src once
                         if (!errors) {
                             errors += 1;
@@ -130,4 +131,4 @@
 
         return this;
     };
-})(jQuery, window);
+}(jQuery, window));
