@@ -1,5 +1,5 @@
 before_install:
-  - 'npm install jslint jshint -g'
+  - 'npm install jshint -g'
 
 # build
 script:
