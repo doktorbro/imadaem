@@ -66,15 +66,15 @@
           oldSrc = $element.attr('src'),
           errors = 0;
 
-        $element
-          .on('error', function() {
+        $element.
+          on('error', function() {
             // fall back to the previous src once
             if (!errors) {
               errors += 1;
               $(this).attr('src', oldSrc);
             }
-          })
-          .attr('src', newSrc);
+          }).
+          attr('src', newSrc);
       },
 
       scale = function() {
@@ -124,9 +124,9 @@
         });
       };
 
-    $(window)
-      .one('load', scale)
-      .on(settings.windowEvents, scale);
+    $(window).
+      one('load', scale).
+      on(settings.windowEvents, scale);
 
     return this;
   };
