@@ -41,7 +41,7 @@ namespace :site do
   task :test do
     Dir.chdir('site') do
       sh 'bundle exec jekyll build --trace'
-      HTML::Proofer.new('./_site').run
+      sh 'htmlproof ./_site'
     end
   end
 end
