@@ -1,9 +1,9 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
-(function ($, window) {
+(function($, window) {
   'use strict';
 
-  $.fn.imadaem = function (options) {
+  $.fn.imadaem = function(options) {
     var
       $elements = this,
 
@@ -14,17 +14,17 @@
         windowEvents: 'resize orientationchange'
       }, options),
 
-      getNativeLength = function (cssLength) {
+      getNativeLength = function(cssLength) {
         var density = window.devicePixelRatio || 1;
         return Math.round(cssLength * density);
       },
 
-      lineHeight = function ($element) {
+      lineHeight = function($element) {
         var lh = parseFloat($element.css('line-height'));
         return isNaN(lh) ? 0 : lh;
       },
 
-      adjustVerticalRhythm = function ($element, height) {
+      adjustVerticalRhythm = function($element, height) {
         if (settings.verticalRhythm === 'line-height') {
           var lh, l;
           lh = lineHeight($element);
@@ -36,7 +36,7 @@
         return height;
       },
 
-      getData = function ($element) {
+      getData = function($element) {
         var data = $element.data(settings.dataAttribute);
 
         if ($.isPlainObject(data)) {
@@ -61,13 +61,13 @@
         }, data);
       },
 
-      setSrc = function ($element, newSrc) {
+      setSrc = function($element, newSrc) {
         var
           oldSrc = $element.attr('src'),
           errors = 0;
 
         $element
-          .on('error', function () {
+          .on('error', function() {
             // fall back to the previous src once
             if (!errors) {
               errors += 1;
@@ -77,7 +77,7 @@
           .attr('src', newSrc);
       },
 
-      scale = function () {
+      scale = function() {
         var
           $this,
           data,
@@ -86,7 +86,7 @@
           minHeight,
           width;
 
-        $elements.each(function () {
+        $elements.each(function() {
           $this = $(this);
 
           data = getData($this);
