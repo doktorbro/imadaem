@@ -2,7 +2,6 @@
   "camelcase": true,
   "curly": true,
   "eqeqeq": true,
-  "expr": true,
   "freeze": true,
   "gcl": true,
   "immed": true,
