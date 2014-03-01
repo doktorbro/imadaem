@@ -2,5 +2,5 @@
 
 set -e
 
-echo "linting with Jshint …"
+echo "Linting with Jshint …"
 jshint js/jquery.imadaem.js
