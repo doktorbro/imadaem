@@ -45,7 +45,9 @@
           // ignore maxRatio if ratio is set
           data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
           // gravity must be a combination of ['l', 'r', 't', 'b']
-          data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) : '';
+          data.gravity = data.gravity ?
+            data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) :
+            '';
         } else {
           data = {url: data};
         }
