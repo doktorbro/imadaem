@@ -6,6 +6,7 @@
   "eqnull": true,
   "expr": true,
   "freeze": true,
+  "gcl": true,
   "immed": true,
   "indent": 2,
   "maxlen": 80,
