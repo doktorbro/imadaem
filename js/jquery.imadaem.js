@@ -1,17 +1,17 @@
 /*! Imadaem v0.4.0 http://imadaem.penibelst.de/ */
 
 (function ($, window) {
-    "use strict";
+    'use strict';
 
     $.fn.imadaem = function (options) {
         var
             $elements = this,
 
             settings = $.extend({
-                dataAttribute: "imadaem",
-                timthumbPath: "/timthumb/timthumb.php",
+                dataAttribute: 'imadaem',
+                timthumbPath: '/timthumb/timthumb.php',
                 verticalRhythm: null,
-                windowEvents: "resize orientationchange"
+                windowEvents: 'resize orientationchange'
             }, options),
 
             getNativeLength = function (cssLength) {
@@ -20,12 +20,12 @@
             },
 
             lineHeight = function ($element) {
-                var lh = parseFloat($element.css("line-height"));
+                var lh = parseFloat($element.css('line-height'));
                 return isNaN(lh) ? 0 : lh;
             },
 
             adjustVerticalRhythm = function ($element, height) {
-                if (settings.verticalRhythm === "line-height") {
+                if (settings.verticalRhythm === 'line-height') {
                     var lh, l;
                     lh = lineHeight($element);
                     if (lh) {
@@ -44,35 +44,35 @@
                     data.ratio = parseFloat(data.ratio) || 0;
                     // ignore maxRatio if ratio is set
                     data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
-                    // gravity must be a combination of ["l", "r", "t", "b"]
-                    data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, "").substr(0, 2) : "";
+                    // gravity must be a combination of ['l', 'r', 't', 'b']
+                    data.gravity = data.gravity ? data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) : '';
                 } else {
                     data = {url: data};
                 }
 
                 return $.extend({
-                    url: "",
-                    gravity: "",
+                    url: '',
+                    gravity: '',
                     ratio: 0,
                     maxRatio: 0,
-                    heightGuide: ""
+                    heightGuide: ''
                 }, data);
             },
 
             setSrc = function ($element, newSrc) {
                 var
-                    oldSrc = $element.attr("src"),
+                    oldSrc = $element.attr('src'),
                     errors = 0;
 
                 $element
-                    .on("error", function () {
+                    .on('error', function () {
                         // fall back to the previous src once
                         if (!errors) {
                             errors += 1;
-                            $(this).attr("src", oldSrc);
+                            $(this).attr('src', oldSrc);
                         }
                     })
-                    .attr("src", newSrc);
+                    .attr('src', newSrc);
             },
 
             scale = function () {
@@ -112,18 +112,18 @@
                     $this.height(height);
 
                     timthumbParams = {
-                        src: data.url || "",
-                        a: data.gravity || "",
+                        src: data.url || '',
+                        a: data.gravity || '',
                         w: getNativeLength(width),
                         h: getNativeLength(height)
                     };
 
-                    setSrc($this, settings.timthumbPath + "?" + $.param(timthumbParams));
+                    setSrc($this, settings.timthumbPath + '?' + $.param(timthumbParams));
                 });
             };
 
         $(window)
-            .one("load", scale)
+            .one('load', scale)
             .on(settings.windowEvents, scale);
 
         return this;
