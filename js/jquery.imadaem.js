@@ -91,9 +91,6 @@
           $this = $(this);
 
           data = getData($this);
-          if (!data.url) {
-            return;
-          }
 
           width = $this.innerWidth();
           height = $this.innerHeight();
@@ -121,7 +118,7 @@
             h: getNativeLength(height)
           };
 
-          setSrc($this, settings.timthumbPath + '?' + $.param(timthumbParams));
+          setSrc($this, settings.url);
         });
       };
 
