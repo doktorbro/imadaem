@@ -15,8 +15,8 @@ test('empty callback', function() {
 
 test('data url callback', function() {
   expect(2);
-  var TINIEST_GIF = 'data:image/gif;base64,\
-    R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+  var TINIEST_GIF = 'data:image/gif;base64,' +
+    'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
   $('#qunit-fixture').append('<img class="tiny">');
 
