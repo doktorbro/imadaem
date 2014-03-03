@@ -10,7 +10,7 @@
       settings = $.extend({
         dataAttribute: 'imadaem',
         timthumbPath: '/timthumb/timthumb.php',
-        url: $.noop(),
+        url: $.noop,
         verticalRhythm: null,
         windowEvents: 'resize orientationchange'
       }, options),
@@ -79,6 +79,10 @@
       },
 
       scale = function() {
+        if (settings.url === $.noop) {
+          return;
+        }
+
         var
           $this,
           data,
