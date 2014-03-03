@@ -1,4 +1,4 @@
-module('img.empty', {
+module('options.url', {
   setup: function() {
     $(document).ready(function() {
       $('#qunit-fixture').
@@ -9,7 +9,7 @@ module('img.empty', {
 });
 
 
-asyncTest('options.url as undefined', function() {
+asyncTest('undefined', function() {
   expect(1);
 
   $('img.empty').imadaem();
@@ -18,7 +18,7 @@ asyncTest('options.url as undefined', function() {
 });
 
 
-asyncTest('options.url as data uri', function() {
+asyncTest('data uri', function() {
   expect(1);
 
   $('img.empty').imadaem({
@@ -29,7 +29,7 @@ asyncTest('options.url as data uri', function() {
 });
 
 
-asyncTest('options.url as callback without arguments', function() {
+asyncTest('callback without arguments', function() {
   expect(1);
 
   $('img.empty').imadaem({
@@ -42,7 +42,7 @@ asyncTest('options.url as callback without arguments', function() {
 });
 
 
-asyncTest('options.url as callback with arguments', function() {
+asyncTest('callback with arguments', function() {
   expect(1);
 
   $('img.dot').imadaem({
