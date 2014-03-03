@@ -7,36 +7,34 @@ module('empty', {
 });
 
 
-asyncTest('empty callback', function() {
+asyncTest('options.url as undefined', function() {
   expect(1);
 
   $('img.empty').imadaem();
 
-  $(window).
-    one('resize', function() {
-      equal($('img.empty').attr('src'), undefined, 'Url is undefined');
-      start();
-    }).
-    trigger('resize');
+  QUnit.assert.srcEqual('img.empty', undefined, 'Url is undefined');
 });
 
 
-asyncTest('data url callback', function() {
+asyncTest('options.url as data uri', function() {
   expect(1);
-  var TINIEST_GIF = 'data:image/gif;base64,' +
-    'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+
+  $('img.empty').imadaem({
+    url: QUnit.helper.dot
+  });
+
+  QUnit.assert.srcEqualDot('img.empty');
+});
+
+
+asyncTest('options.url as callback without arguments', function() {
+  expect(1);
 
   $('img.empty').imadaem({
     url: function() {
-      return TINIEST_GIF;
+      return QUnit.helper.dot;
     }
   });
 
-  $(window).
-    one('resize', function() {
-      equal($('img.empty').attr('src'), TINIEST_GIF, 'Url is the tiniest gif');
-      start();
-    }).
-    trigger('resize');
+  QUnit.assert.srcEqualDot('img.empty');
 });
-
