@@ -1,4 +1,4 @@
-module('empty', {
+module('img.empty', {
   setup: function() {
     $(document).ready(function() {
       $('#qunit-fixture').append('<img class="empty">');
