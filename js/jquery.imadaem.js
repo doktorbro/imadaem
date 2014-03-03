@@ -79,10 +79,6 @@
       },
 
       scale = function() {
-        if (settings.url === $.noop) {
-          return;
-        }
-
         var
           $this,
           data,
