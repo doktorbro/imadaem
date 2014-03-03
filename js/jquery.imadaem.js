@@ -122,7 +122,11 @@
             h: getNativeLength(height)
           };
 
-          setSrc($this, settings.url);
+          if ($.isFunction(settings.url)) {
+            setSrc($this, settings.url(data));
+          } else {
+            setSrc($this, settings.url);
+          }
         });
       };
 
