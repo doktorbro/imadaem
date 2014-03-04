@@ -10,17 +10,18 @@ module('resizer-twitter', {
         appendTo('#qunit-fixture').
         imadaem({
           url: function(tags) {
-            var suffix = '';
-            if (tags.size.width >= 1024) {
-              suffix = ':large';
-            } else if (tags.size.width >= 600) {
-              suffix = ':medium';
-            } else if (tags.size.width >= 340) {
-              suffix = ':small';
-            } else {
-              suffix = ':thumb';
-            }
-            return tags.url + suffix;
+            var result;
+            $.each([
+              { width:    0, suffix: ':thumb' },
+              { width:  340, suffix: ':small' },
+              { width:  600, suffix: ':medium' },
+              { width: 1024, suffix: ':large' }
+            ], function() {
+              if (tags.size.width >= this.width) {
+                result = tags.url + this.suffix;
+              }
+            });
+            return result;
           }
         });
     });
