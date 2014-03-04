@@ -64,8 +64,8 @@
             height: getNativeLength($element.innerHeight())
           },
           defined: {
-            width: $element.css("overflow-x") === settings.overflowDefined,
-            height: $element.css("overflow-y") === settings.overflowDefined
+            width: $element.css('overflow-x') === settings.overflowDefined,
+            height: $element.css('overflow-y') === settings.overflowDefined
           }
         };
       },
