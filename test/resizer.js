@@ -38,3 +38,14 @@ asyncTest('small', function() {
     QUnit.helper.twitter + ':small',
     'Url is small');
 });
+
+
+asyncTest('large', function() {
+  expect(1);
+
+  $('img.twitter').css({'width': 1024});
+
+  QUnit.assert.srcEqual('img.twitter',
+    QUnit.helper.twitter + ':large',
+    'Url is large');
+});
