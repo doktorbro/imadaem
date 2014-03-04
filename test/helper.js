@@ -1,6 +1,7 @@
 QUnit.extend(QUnit, {
   helper: {
-    dot: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
+    dot: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
+    twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg'
   }
 });
 
