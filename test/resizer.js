@@ -28,12 +28,12 @@ module('resizer-twitter', {
 });
 
 
-asyncTest('thumb', function() {
+asyncTest('small', function() {
   expect(1);
 
   $('img.twitter').css({'width': 599});
 
   QUnit.assert.srcEqual('img.twitter',
     QUnit.helper.twitter + ':small',
-    'Url is thumb');
+    'Url is small');
 });
