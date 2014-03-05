@@ -49,3 +49,36 @@ asyncTest('large', function() {
     QUnit.helper.twitter + ':large',
     'Url is large');
 });
+
+
+module('resizer-google', {
+  setup: function() {
+    $(document).ready(function() {
+
+      $('<img class="google">').
+        data('imadaem', {
+          url: QUnit.helper.google
+        }).
+        attr('src', QUnit.helper.google + 'w150/').
+        appendTo('#qunit-fixture').
+        imadaem({
+          url: function(tags) {
+            return tags.url + 'w' + tags.size.width + '/';
+          }
+        });
+    });
+  }
+});
+
+
+asyncTest('half-year-width', function() {
+  expect(1);
+
+  var halfYear = Math.round(new Date().getFullYear() / 2);
+
+  $('img.google').css({'width': halfYear});
+
+  QUnit.assert.srcEqual('img.google',
+    QUnit.helper.google + 'w' + halfYear + '/',
+    'Url is half-year');
+});

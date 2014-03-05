@@ -1,7 +1,9 @@
 QUnit.extend(QUnit, {
   helper: {
     dot: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
-    twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg'
+    twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg',
+    google: 'https://lh3.googleusercontent.com' +
+      '/-jd6gBLqQmpo/UUe4dmT5L6I/AAAAAAAAMXU/613uVeYlj6Y/'
   }
 });
 
