@@ -160,7 +160,7 @@ module('resizer-gravatar', {
 asyncTest('hundred', function() {
   expect(1);
 
-  $('img.gravatar').css({'width': 100, 'height': 1000});
+  $('img.gravatar').css({'width': 100});
 
   QUnit.assert.srcEqual('img.gravatar',
     QUnit.helper.gravatar.url + '?s=100',
