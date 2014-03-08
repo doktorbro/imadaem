@@ -3,25 +3,16 @@ module('resizer-twitter', {
     $(document).ready(function() {
 
       $('<img class="twitter">').
-        data('imadaem', {
-          url: QUnit.helper.twitter
-        }).
+        data('imadaem', QUnit.helper.twitter).
         attr('src', QUnit.helper.twitter + ':thumb').
         appendTo('#qunit-fixture').
         imadaem({
           url: function(tags) {
-            var result;
-            $.each([
-              { width:    0, suffix: ':thumb' },
-              { width:  340, suffix: ':small' },
-              { width:  600, suffix: ':medium' },
-              { width: 1024, suffix: ':large' }
-            ], function() {
-              if (tags.size.width >= this.width) {
-                result = tags.url + this.suffix;
-              }
-            });
-            return result;
+            var suffix = 'thumb';
+            if (tags.size.width > 100) {
+              suffix = 'large'
+            }
+            return QUnit.helper.twitter.url + ':' + suffix;
           }
         });
     });

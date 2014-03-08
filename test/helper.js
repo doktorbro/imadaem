@@ -8,7 +8,14 @@ QUnit.extend(QUnit, {
       },
       description: 'The Tiniest GIF Ever. By Paul Bonser'
     },
-    twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg',
+    twitter: {
+      url: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg',
+      size: {
+        width: 1024,
+        height: 768
+      },
+      description: 'Walter Greiner. By Anatol Broder'
+    },
     google: {
       url: 'https://lh3.googleusercontent.com' +
         '/-jd6gBLqQmpo/UUe4dmT5L6I/AAAAAAAAMXU/613uVeYlj6Y/',
