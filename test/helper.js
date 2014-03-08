@@ -32,6 +32,14 @@ QUnit.extend(QUnit, {
         height: 614
       },
       description: 'Roman Forum. By Jamie Frith'
+    },
+    lorempixel: {
+      url: 'http://lorempixel.com/',
+      size: {
+        width: 1920,
+        height: 1920
+      },
+      description: 'Dummy Image. By Holler Moritz'
     }
   }
 });

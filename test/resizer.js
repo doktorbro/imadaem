@@ -108,3 +108,32 @@ asyncTest('thousand-width', function() {
     QUnit.helper.flickr.url.replace('.jpg', '_b.jpg'),
     'Url is big');
 });
+
+
+module('resizer-lorempixel', {
+  setup: function() {
+    $(document).ready(function() {
+
+      $('<img class="lorempixel">').
+        data('imadaem', QUnit.helper.lorempixel).
+        attr('src', QUnit.helper.lorempixel.url + '100/100/').
+        appendTo('#qunit-fixture').
+        imadaem({
+          url: function(tags) {
+            return tags.url + tags.size.width + '/' + tags.size.height + '/';
+          }
+        });
+    });
+  }
+});
+
+
+asyncTest('thousand', function() {
+  expect(1);
+
+  $('img.lorempixel').css({'width': 1000, 'height': 1000});
+
+  QUnit.assert.srcEqual('img.lorempixel',
+    QUnit.helper.lorempixel.url + '1000/1000/',
+    'Url is thousand');
+});
