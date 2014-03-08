@@ -3,7 +3,7 @@ module('options.url', {
     $(document).ready(function() {
       $('#qunit-fixture').
         append('<img class="empty">').
-        append($('<img class="dot">').data('imadaem', {url: QUnit.helper.dot}));
+        append($('<img class="dot">').data('imadaem', QUnit.helper.dot));
     });
   }
 });
@@ -22,7 +22,7 @@ asyncTest('data uri', function() {
   expect(1);
 
   $('img.empty').imadaem({
-    url: QUnit.helper.dot
+    url: QUnit.helper.dot.url
   });
 
   QUnit.assert.srcEqualDot('img.empty');
@@ -34,7 +34,7 @@ asyncTest('callback without arguments', function() {
 
   $('img.empty').imadaem({
     url: function() {
-      return QUnit.helper.dot;
+      return QUnit.helper.dot.url;
     }
   });
 

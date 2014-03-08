@@ -1,6 +1,13 @@
 QUnit.extend(QUnit, {
   helper: {
-    dot: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
+    dot: {
+      url: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
+      size: {
+        width: 1,
+        height: 1
+      },
+      description: 'The Tiniest GIF Ever. By Paul Bonser'
+    },
     twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg',
     google: 'https://lh3.googleusercontent.com' +
       '/-jd6gBLqQmpo/UUe4dmT5L6I/AAAAAAAAMXU/613uVeYlj6Y/',
@@ -27,6 +34,6 @@ QUnit.extend(QUnit.assert, {
       trigger('resize');
   },
   srcEqualDot: function(element) {
-    this.srcEqual(element, QUnit.helper.dot, 'Image is a dot');
+    this.srcEqual(element, QUnit.helper.dot.url, 'Image is a dot');
   }
 });
