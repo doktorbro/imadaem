@@ -9,8 +9,15 @@ QUnit.extend(QUnit, {
       description: 'The Tiniest GIF Ever. By Paul Bonser'
     },
     twitter: 'https://pbs.twimg.com/media/A6j_dWXCcAAEOfR.jpg',
-    google: 'https://lh3.googleusercontent.com' +
-      '/-jd6gBLqQmpo/UUe4dmT5L6I/AAAAAAAAMXU/613uVeYlj6Y/',
+    google: {
+      url: 'https://lh3.googleusercontent.com' +
+        '/-jd6gBLqQmpo/UUe4dmT5L6I/AAAAAAAAMXU/613uVeYlj6Y/',
+      size: {
+        width: 1920,
+        height: 2560
+      },
+      description: 'Snow Tree. By Linus Torvalds'
+    },
     flickr: {
       url: 'https://farm8.staticflickr.com/7397/12383552194_3c25c47d76.jpg',
       size: {

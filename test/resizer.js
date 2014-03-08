@@ -56,10 +56,8 @@ module('resizer-google', {
     $(document).ready(function() {
 
       $('<img class="google">').
-        data('imadaem', {
-          url: QUnit.helper.google
-        }).
-        attr('src', QUnit.helper.google + 'w150/').
+        data('imadaem', QUnit.helper.google).
+        attr('src', QUnit.helper.google.url + 'w100/').
         appendTo('#qunit-fixture').
         imadaem({
           url: function(tags) {
@@ -71,15 +69,13 @@ module('resizer-google', {
 });
 
 
-asyncTest('half-year-width', function() {
+asyncTest('thousand-width', function() {
   expect(1);
 
-  var halfYear = Math.round(new Date().getFullYear() / 2);
-
-  $('img.google').css({'width': halfYear});
+  $('img.google').css({'width': 1000});
 
   QUnit.assert.srcEqual('img.google',
-    QUnit.helper.google + 'w' + halfYear + '/',
+    QUnit.helper.google.url + 'w1000/',
     'Url is half-year');
 });
 
