@@ -8,10 +8,7 @@ module('resizer-twitter', {
         appendTo('#qunit-fixture').
         imadaem({
           url: function(tags) {
-            var suffix = 'thumb';
-            if (tags.size.width > 100) {
-              suffix = 'large';
-            }
+            var suffix = (tags.size.width > 100) ? 'large' : 'thumb';
             return QUnit.helper.twitter.url + ':' + suffix;
           }
         });
@@ -81,10 +78,7 @@ module('resizer-flickr', {
         appendTo('#qunit-fixture').
         imadaem({
           url: function(tags) {
-            var suffix = 't';
-            if (tags.size.width > 100) {
-              suffix = 'b';
-            }
+            var suffix = (tags.size.width > 100) ? 'b' : 't';
             return QUnit.helper.flickr.url.
               replace('.jpg', '_' + suffix + '.jpg');
           }
