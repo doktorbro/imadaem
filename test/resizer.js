@@ -20,24 +20,24 @@ module('resizer-twitter', {
 });
 
 
-asyncTest('small', function() {
+asyncTest('hundred-width', function() {
   expect(1);
 
-  $('img.twitter').css({'width': 599});
+  $('img.twitter').css({'width': 100});
 
   QUnit.assert.srcEqual('img.twitter',
-    QUnit.helper.twitter + ':small',
-    'Url is small');
+    QUnit.helper.twitter.url + ':thumb',
+    'Url is thumb');
 });
 
 
-asyncTest('large', function() {
+asyncTest('thousand-width', function() {
   expect(1);
 
-  $('img.twitter').css({'width': 1024});
+  $('img.twitter').css({'width': 1000});
 
   QUnit.assert.srcEqual('img.twitter',
-    QUnit.helper.twitter + ':large',
+    QUnit.helper.twitter.url + ':large',
     'Url is large');
 });
 
