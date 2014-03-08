@@ -10,7 +10,7 @@ module('resizer-twitter', {
           url: function(tags) {
             var suffix = 'thumb';
             if (tags.size.width > 100) {
-              suffix = 'large'
+              suffix = 'large';
             }
             return QUnit.helper.twitter.url + ':' + suffix;
           }
@@ -83,7 +83,7 @@ module('resizer-flickr', {
           url: function(tags) {
             var suffix = 't';
             if (tags.size.width > 100) {
-              suffix = 'b'
+              suffix = 'b';
             }
             return QUnit.helper.flickr.url.
               replace('.jpg', '_' + suffix + '.jpg');
