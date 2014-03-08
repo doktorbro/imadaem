@@ -40,6 +40,14 @@ QUnit.extend(QUnit, {
         height: 1920
       },
       description: 'Dummy Image. By Holler Moritz'
+    },
+    gravatar: {
+      url: 'https://gravatar.com/avatar/d43bb4e348b0d3e41503731eb5072bb1',
+      size: {
+        width: 512,
+        height: 512
+      },
+      description: 'Anatol Broder. By himself'
     }
   }
 });

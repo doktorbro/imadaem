@@ -137,3 +137,32 @@ asyncTest('thousand', function() {
     QUnit.helper.lorempixel.url + '1000/1000/',
     'Url is thousand');
 });
+
+
+module('resizer-gravatar', {
+  setup: function() {
+    $(document).ready(function() {
+
+      $('<img class="gravatar">').
+        data('imadaem', QUnit.helper.gravatar).
+        attr('src', QUnit.helper.gravatar.url).
+        appendTo('#qunit-fixture').
+        imadaem({
+          url: function(tags) {
+            return tags.url + '?s=' + tags.size.width;
+          }
+        });
+    });
+  }
+});
+
+
+asyncTest('hundred', function() {
+  expect(1);
+
+  $('img.gravatar').css({'width': 100, 'height': 1000});
+
+  QUnit.assert.srcEqual('img.gravatar',
+    QUnit.helper.gravatar.url + '?s=100',
+    'Url is hundred');
+});
