@@ -64,7 +64,7 @@ asyncTest('thousand-width', function() {
 
   QUnit.assert.srcEqual('img.google',
     QUnit.helper.google.url + 'w1000/',
-    'Url is half-year');
+    'Url is thousand');
 });
 
 
@@ -95,7 +95,7 @@ asyncTest('hundred-width', function() {
 
   QUnit.assert.srcEqual('img.flickr',
     QUnit.helper.flickr.url.replace('.jpg', '_t.jpg'),
-    'Url is thousand');
+    'Url is thumb');
 });
 
 
@@ -106,5 +106,5 @@ asyncTest('thousand-width', function() {
 
   QUnit.assert.srcEqual('img.flickr',
     QUnit.helper.flickr.url.replace('.jpg', '_b.jpg'),
-    'Url is thousand');
+    'Url is big');
 });
