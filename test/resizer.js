@@ -82,3 +82,48 @@ asyncTest('half-year-width', function() {
     QUnit.helper.google + 'w' + halfYear + '/',
     'Url is half-year');
 });
+
+
+module('resizer-flickr', {
+  setup: function() {
+    $(document).ready(function() {
+
+      $('<img class="flickr">').
+        data('imadaem', QUnit.helper.flickr).
+        attr('src', QUnit.helper.flickr.url.replace('.jpg', '_t.jpg')).
+        appendTo('#qunit-fixture').
+        imadaem({
+          url: function(tags) {
+            var suffix = 't';
+            if (tags.size.width > 100) {
+              suffix = 'b'
+            }
+            return QUnit.helper.flickr.url.
+              replace('.jpg', '_' + suffix + '.jpg');
+          }
+        });
+    });
+  }
+});
+
+
+asyncTest('hundred-width', function() {
+  expect(1);
+
+  $('img.flickr').css({'width': 100});
+
+  QUnit.assert.srcEqual('img.flickr',
+    QUnit.helper.flickr.url.replace('.jpg', '_t.jpg'),
+    'Url is thousand');
+});
+
+
+asyncTest('thousand-width', function() {
+  expect(1);
+
+  $('img.flickr').css({'width': 1000});
+
+  QUnit.assert.srcEqual('img.flickr',
+    QUnit.helper.flickr.url.replace('.jpg', '_b.jpg'),
+    'Url is thousand');
+});
