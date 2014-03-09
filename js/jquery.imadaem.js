@@ -71,12 +71,12 @@
       },
 
       scale = function() {
-        var $this, tags;
+        var $this, properties;
 
         $elements.each(function() {
           $this = $(this);
 
-          tags = $.extend({
+          properties = $.extend({
             url: '',
             gravity: '',
             size: { width: 0, height: 0 },
@@ -86,7 +86,7 @@
           getStyle($this));
 
           if ($.isFunction(settings.url)) {
-            setSrc($this, settings.url(tags));
+            setSrc($this, settings.url(properties));
           } else {
             setSrc($this, settings.url);
           }
