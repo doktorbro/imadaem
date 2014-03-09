@@ -9,8 +9,8 @@
 
       settings = $.extend({
         dataAttribute: 'imadaem',
-        timthumbPath: '/timthumb/timthumb.php',
-        verticalRhythm: null,
+        overflowDefined: 'hidden',
+        url: $.noop,
         windowEvents: 'resize orientationchange'
       }, options),
 
@@ -19,31 +19,10 @@
         return Math.round(cssLength * density);
       },
 
-      lineHeight = function($element) {
-        var lh = parseFloat($element.css('line-height'));
-        return isNaN(lh) ? 0 : lh;
-      },
-
-      adjustVerticalRhythm = function($element, height) {
-        if (settings.verticalRhythm === 'line-height') {
-          var lh, l;
-          lh = lineHeight($element);
-          if (lh) {
-            l = Math.max(1, Math.round(height / lh));
-            height = lh * l;
-          }
-        }
-        return height;
-      },
-
       getData = function($element) {
         var data = $element.data(settings.dataAttribute);
 
         if ($.isPlainObject(data)) {
-          // ratio must be a number
-          data.ratio = parseFloat(data.ratio) || 0;
-          // ignore maxRatio if ratio is set
-          data.maxRatio = data.ratio ? 0 : parseFloat(data.maxRatio) || 0;
           // gravity must be a combination of ['l', 'r', 't', 'b']
           data.gravity = data.gravity ?
             data.gravity.replace(/[^lrtb]/g, '').substr(0, 2) :
@@ -54,14 +33,15 @@
 
         return $.extend({
           url: '',
-          gravity: '',
-          ratio: 0,
-          maxRatio: 0,
-          heightGuide: ''
+          gravity: ''
         }, data);
       },
 
       setSrc = function($element, newSrc) {
+        if (!newSrc) {
+          return;
+        }
+
         var
           oldSrc = $element.attr('src'),
           errors = 0;
@@ -77,50 +57,39 @@
           attr('src', newSrc);
       },
 
+      getStyle = function($element) {
+        return {
+          size: {
+            width: getNativeLength($element.innerWidth()),
+            height: getNativeLength($element.innerHeight())
+          },
+          defined: {
+            width: $element.css('overflow-x') === settings.overflowDefined,
+            height: $element.css('overflow-y') === settings.overflowDefined
+          }
+        };
+      },
+
       scale = function() {
-        var
-          $this,
-          data,
-          timthumbParams,
-          height,
-          minHeight,
-          width;
+        var $this, properties;
 
         $elements.each(function() {
           $this = $(this);
 
-          data = getData($this);
-          if (!data.url) {
-            return;
+          properties = $.extend({
+            url: '',
+            gravity: '',
+            size: { width: 0, height: 0 },
+            defined: { width: false, height: false }
+          },
+          getData($this),
+          getStyle($this));
+
+          if ($.isFunction(settings.url)) {
+            setSrc($this, settings.url(properties));
+          } else {
+            setSrc($this, settings.url);
           }
-
-          width = $this.innerWidth();
-          height = $this.innerHeight();
-
-          if (data.ratio) {
-            height = Math.round(width / data.ratio);
-          } else if ($(data.heightGuide).length) {
-            height = $(data.heightGuide).innerHeight();
-          }
-
-          if (data.maxRatio) {
-            minHeight = Math.round(width / data.maxRatio);
-            height = Math.max(minHeight, height);
-          }
-
-          height = adjustVerticalRhythm($this, height);
-
-          // prevent blinking effects
-          $this.height(height);
-
-          timthumbParams = {
-            src: data.url || '',
-            a: data.gravity || '',
-            w: getNativeLength(width),
-            h: getNativeLength(height)
-          };
-
-          setSrc($this, settings.timthumbPath + '?' + $.param(timthumbParams));
         });
       };
 
