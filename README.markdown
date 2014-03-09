@@ -7,17 +7,17 @@ Imadaem is a javascript daemon for responsive images. It depends on [Jquery](htt
 
 Visit Imadaem’s [website][0] to get started.
 
-## Source
+## Source `js`
 
-The source is in the *[jquery.imadaem.js](js/jquery.imadaem.js)* file.
+The source is in the `js/jquery.imadaem.js` file.
 
-## Test
+## Test `test`
 
-Open the *[jquery.imadaem.js](test/index.html)* file in your browser to test Imadaem.
+Open the `test/index.html` file in your browser to test Imadaem.
 
-## Documentation
+## Documentation `site`
 
-The documentation is included in this repository in the *[site](site)* directory. It’s built with Jekyll and publicly hosted on GitHub Pages at *[http://imadaem.penibelst.de/][0]*. The docs may also be run locally.
+The documentation is included in this repository. It’s built with Jekyll and publicly hosted on GitHub Pages at *[http://imadaem.penibelst.de/][0]*. The documentation may also be run locally.
 
 ## Copyright
 
